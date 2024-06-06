@@ -85,6 +85,7 @@ namespace AnchorTry
             txtPayment.Clear();
             txtChange.Clear();
         }
+
         private void btnPlainPaper_Click(object sender, EventArgs e)
         {
             if (btnPlainPaper.Checked)
