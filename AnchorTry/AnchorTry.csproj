@@ -83,6 +83,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbset1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dbSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +151,17 @@
     </None>
     <None Include="dbset1.xss">
       <DependentUpon>dbset1.xsd</DependentUpon>
+    </None>
+    <None Include="dbSet2.xsc">
+      <DependentUpon>dbSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSet2.xss">
+      <DependentUpon>dbSet2.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFolioPlain = new Guna.UI2.WinForms.Guna2TileButton();
@@ -68,18 +68,13 @@
             this.btnProceed = new Guna.UI2.WinForms.Guna2TileButton();
             this.btnClear = new Guna.UI2.WinForms.Guna2TileButton();
             this.pnlPackagePhoto = new System.Windows.Forms.Panel();
+            this.txtPackagePhoto = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtqty = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paperTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.printSizeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDPackageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvMain = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.tblprintshopBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSet2 = new AnchorTry.dbSet2();
             this.tblprintshopBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dbset1 = new AnchorTry.dbset1();
             this.tblprintshopBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -94,7 +89,9 @@
             this.txtChange = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnEnter = new Guna.UI2.WinForms.Guna2TileButton();
-            this.txtPackagePhoto = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.tblprintshopBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_printshopTableAdapter2 = new AnchorTry.dbSet2TableAdapters.tbl_printshopTableAdapter();
+            this.lblReference = new System.Windows.Forms.Label();
             this.pnlPaperSizePlain.SuspendLayout();
             this.pnlColorPlain.SuspendLayout();
             this.pnlPrintTypePlain.SuspendLayout();
@@ -102,12 +99,15 @@
             this.pnlColorPhoto.SuspendLayout();
             this.pnlPrintTypePhoto.SuspendLayout();
             this.pnlPackagePhoto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbset1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -733,6 +733,31 @@
             this.pnlPackagePhoto.Size = new System.Drawing.Size(199, 112);
             this.pnlPackagePhoto.TabIndex = 7;
             // 
+            // txtPackagePhoto
+            // 
+            this.txtPackagePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtPackagePhoto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.txtPackagePhoto.BorderRadius = 15;
+            this.txtPackagePhoto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.txtPackagePhoto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtPackagePhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
+            this.txtPackagePhoto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPackagePhoto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPackagePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackagePhoto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtPackagePhoto.ItemHeight = 30;
+            this.txtPackagePhoto.Items.AddRange(new object[] {
+            "Package A",
+            "Package B",
+            "Package C",
+            "Package D",
+            "Package E"});
+            this.txtPackagePhoto.Location = new System.Drawing.Point(17, 52);
+            this.txtPackagePhoto.Name = "txtPackagePhoto";
+            this.txtPackagePhoto.Size = new System.Drawing.Size(169, 36);
+            this.txtPackagePhoto.TabIndex = 7;
+            this.txtPackagePhoto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -781,118 +806,70 @@
             this.txtqty.TabIndex = 8;
             this.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2DataGridView1
+            // dgvMain
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            this.guna2DataGridView1.AutoGenerateColumns = false;
-            this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            this.guna2DataGridView1.ColumnHeadersHeight = 15;
-            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.paperTypeDataGridViewTextBoxColumn,
-            this.printTypeDataGridViewTextBoxColumn,
-            this.printSizeDataGridViewTextBoxColumn,
-            this.colorTypeDataGridViewTextBoxColumn,
-            this.iDPackageDataGridViewTextBoxColumn,
-            this.quantityDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn});
-            this.guna2DataGridView1.DataSource = this.tblprintshopBindingSource2;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
-            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(45, 521);
-            this.guna2DataGridView1.Name = "guna2DataGridView1";
-            this.guna2DataGridView1.RowHeadersVisible = false;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(918, 350);
-            this.guna2DataGridView1.TabIndex = 11;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 15;
-            this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvMain.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvMain.ColumnHeadersHeight = 15;
+            this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMain.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMain.Location = new System.Drawing.Point(45, 521);
+            this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
+            this.dgvMain.RowHeadersVisible = false;
+            this.dgvMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvMain.Size = new System.Drawing.Size(918, 350);
+            this.dgvMain.TabIndex = 11;
+            this.dgvMain.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMain.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvMain.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvMain.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvMain.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvMain.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.dgvMain.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMain.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvMain.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMain.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMain.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvMain.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvMain.ThemeStyle.HeaderStyle.Height = 15;
+            this.dgvMain.ThemeStyle.ReadOnly = true;
+            this.dgvMain.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvMain.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvMain.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvMain.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvMain.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvMain.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvMain.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // idDataGridViewTextBoxColumn
+            // tblprintshopBindingSource4
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tblprintshopBindingSource4.DataMember = "tbl_printshop";
+            this.tblprintshopBindingSource4.DataSource = this.dbSet2;
             // 
-            // paperTypeDataGridViewTextBoxColumn
+            // dbSet2
             // 
-            this.paperTypeDataGridViewTextBoxColumn.DataPropertyName = "PaperType";
-            this.paperTypeDataGridViewTextBoxColumn.HeaderText = "PaperType";
-            this.paperTypeDataGridViewTextBoxColumn.Name = "paperTypeDataGridViewTextBoxColumn";
-            // 
-            // printTypeDataGridViewTextBoxColumn
-            // 
-            this.printTypeDataGridViewTextBoxColumn.DataPropertyName = "PrintType";
-            this.printTypeDataGridViewTextBoxColumn.HeaderText = "PrintType";
-            this.printTypeDataGridViewTextBoxColumn.Name = "printTypeDataGridViewTextBoxColumn";
-            // 
-            // printSizeDataGridViewTextBoxColumn
-            // 
-            this.printSizeDataGridViewTextBoxColumn.DataPropertyName = "PrintSize";
-            this.printSizeDataGridViewTextBoxColumn.HeaderText = "PrintSize";
-            this.printSizeDataGridViewTextBoxColumn.Name = "printSizeDataGridViewTextBoxColumn";
-            // 
-            // colorTypeDataGridViewTextBoxColumn
-            // 
-            this.colorTypeDataGridViewTextBoxColumn.DataPropertyName = "ColorType";
-            this.colorTypeDataGridViewTextBoxColumn.HeaderText = "ColorType";
-            this.colorTypeDataGridViewTextBoxColumn.Name = "colorTypeDataGridViewTextBoxColumn";
-            // 
-            // iDPackageDataGridViewTextBoxColumn
-            // 
-            this.iDPackageDataGridViewTextBoxColumn.DataPropertyName = "IDPackage";
-            this.iDPackageDataGridViewTextBoxColumn.HeaderText = "IDPackage";
-            this.iDPackageDataGridViewTextBoxColumn.Name = "iDPackageDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // amountDataGridViewTextBoxColumn
-            // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
+            this.dbSet2.DataSetName = "dbSet2";
+            this.dbSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblprintshopBindingSource2
             // 
@@ -1073,39 +1050,34 @@
             this.btnEnter.Text = "Enter";
             this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
-            // txtPackagePhoto
+            // tblprintshopBindingSource3
             // 
-            this.txtPackagePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtPackagePhoto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.txtPackagePhoto.BorderRadius = 15;
-            this.txtPackagePhoto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtPackagePhoto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtPackagePhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
-            this.txtPackagePhoto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPackagePhoto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPackagePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPackagePhoto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtPackagePhoto.ItemHeight = 30;
-            this.txtPackagePhoto.Items.AddRange(new object[] {
-            "Package A",
-            "Package B",
-            "Package C",
-            "Package D",
-            "Package E"});
-            this.txtPackagePhoto.Location = new System.Drawing.Point(17, 52);
-            this.txtPackagePhoto.Name = "txtPackagePhoto";
-            this.txtPackagePhoto.Size = new System.Drawing.Size(169, 36);
-            this.txtPackagePhoto.TabIndex = 7;
-            this.txtPackagePhoto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tblprintshopBindingSource3.DataMember = "tbl_printshop";
+            this.tblprintshopBindingSource3.DataSource = this.dbSet2;
+            // 
+            // tbl_printshopTableAdapter2
+            // 
+            this.tbl_printshopTableAdapter2.ClearBeforeFill = true;
+            // 
+            // lblReference
+            // 
+            this.lblReference.AutoSize = true;
+            this.lblReference.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReference.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblReference.Location = new System.Drawing.Point(42, 12);
+            this.lblReference.Name = "lblReference";
+            this.lblReference.Size = new System.Drawing.Size(0, 13);
+            this.lblReference.TabIndex = 13;
             // 
             // UC_PlainPaper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.lblReference);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.guna2DataGridView1);
+            this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.txtChange);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtPayment);
@@ -1144,12 +1116,15 @@
             this.pnlPrintTypePhoto.PerformLayout();
             this.pnlPackagePhoto.ResumeLayout(false);
             this.pnlPackagePhoto.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbset1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblprintshopBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1196,20 +1171,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2TextBox txtqty;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvMain;
         private System.Windows.Forms.BindingSource tblprintshopBindingSource;
         private dbSet dbSet;
         private dbSetTableAdapters.tbl_printshopTableAdapter tbl_printshopTableAdapter;
         private Guna.UI2.WinForms.Guna2TileButton btnDone;
         private Guna.UI2.WinForms.Guna2TextBox txtPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paperTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn printTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn printSizeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDPackageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource tblprintshopBindingSource2;
         private dbset1 dbset1;
         private System.Windows.Forms.BindingSource tblprintshopBindingSource1;
@@ -1220,5 +1187,10 @@
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TileButton btnEnter;
         private Guna.UI2.WinForms.Guna2ComboBox txtPackagePhoto;
+        private System.Windows.Forms.BindingSource tblprintshopBindingSource3;
+        private dbSet2 dbSet2;
+        private dbSet2TableAdapters.tbl_printshopTableAdapter tbl_printshopTableAdapter2;
+        private System.Windows.Forms.BindingSource tblprintshopBindingSource4;
+        public System.Windows.Forms.Label lblReference;
     }
 }

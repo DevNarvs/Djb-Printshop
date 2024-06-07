@@ -34,6 +34,22 @@ namespace AnchorTry
             UC_Dashboard uc = new UC_Dashboard();
             addUserControl(uc);
         }
+        //auto generated reference
+        static string GenerateReferenceNumber()
+        {
+            // Use current date/time to ensure uniqueness
+            string timestamp = DateTime.Now.ToString("MMddss");
+
+            // Generate a random number
+            Random rnd = new Random();
+            int randomNumber = rnd.Next(1, 999); // Adjust range as needed
+
+            // Combine timestamp and random number to create the reference
+            string referenceNumber = timestamp + randomNumber.ToString();
+
+            return referenceNumber;
+        }
+
         private void addUserControl(UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
@@ -50,6 +66,8 @@ namespace AnchorTry
         {
             UC_PlainPaper uc = new UC_PlainPaper();
             addUserControl(uc);
+
+            uc.lblReference.Text = GenerateReferenceNumber();
         }
     }
 }
