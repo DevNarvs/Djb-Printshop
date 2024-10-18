@@ -69,5 +69,11 @@ namespace AnchorTry
 
             uc.lblReference.Text = GenerateReferenceNumber();
         }
+
+        private void btnWallets_Click(object sender, EventArgs e)
+        {
+            ucWallets uc = new ucWallets();
+            addUserControl(uc);
+        }
     }
 }
