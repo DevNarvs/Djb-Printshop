@@ -637,6 +637,7 @@ namespace AnchorTry
                 txtPayment.Text = "";
                 txtChange.Text = "";
 
+
                 dgvMain.DataSource = null;
 
             }
