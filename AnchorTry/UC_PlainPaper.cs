@@ -638,6 +638,7 @@ namespace AnchorTry
                 txtChange.Text = "";
 
 
+
                 dgvMain.DataSource = null;
 
             }
