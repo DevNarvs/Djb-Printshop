@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnFolioPlain = new Guna.UI2.WinForms.Guna2TileButton();
@@ -140,6 +140,7 @@
             this.btnFolioPlain.BorderThickness = 2;
             this.btnFolioPlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnFolioPlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnFolioPlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFolioPlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFolioPlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFolioPlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -162,6 +163,7 @@
             this.btnA4Plain.BorderThickness = 2;
             this.btnA4Plain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnA4Plain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnA4Plain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnA4Plain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnA4Plain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnA4Plain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -184,6 +186,7 @@
             this.btnLetterPlain.BorderThickness = 2;
             this.btnLetterPlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLetterPlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLetterPlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLetterPlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLetterPlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLetterPlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -206,6 +209,7 @@
             this.btnLegalPlain.BorderThickness = 2;
             this.btnLegalPlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnLegalPlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnLegalPlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLegalPlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLegalPlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLegalPlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -263,6 +267,7 @@
             this.btnGrayscalePlain.BorderThickness = 2;
             this.btnGrayscalePlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnGrayscalePlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnGrayscalePlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGrayscalePlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnGrayscalePlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnGrayscalePlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -285,6 +290,7 @@
             this.btnColoredPlain.BorderThickness = 2;
             this.btnColoredPlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnColoredPlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnColoredPlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnColoredPlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnColoredPlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnColoredPlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -330,6 +336,7 @@
             this.btnFullImagePlain.BorderThickness = 2;
             this.btnFullImagePlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnFullImagePlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnFullImagePlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFullImagePlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnFullImagePlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnFullImagePlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -352,6 +359,7 @@
             this.btnImagePlain.BorderThickness = 2;
             this.btnImagePlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnImagePlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnImagePlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImagePlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnImagePlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnImagePlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -374,6 +382,7 @@
             this.btnDocumentPlain.BorderThickness = 2;
             this.btnDocumentPlain.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDocumentPlain.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDocumentPlain.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDocumentPlain.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDocumentPlain.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDocumentPlain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -396,6 +405,7 @@
             this.btnPlainPaper.BorderThickness = 2;
             this.btnPlainPaper.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPlainPaper.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPlainPaper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlainPaper.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPlainPaper.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPlainPaper.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -419,6 +429,7 @@
             this.btnPhotoPaper.BorderThickness = 2;
             this.btnPhotoPaper.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnPhotoPaper.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPhotoPaper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPhotoPaper.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPhotoPaper.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPhotoPaper.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -466,6 +477,7 @@
             this.btnA4Photo.BorderThickness = 2;
             this.btnA4Photo.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnA4Photo.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnA4Photo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnA4Photo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnA4Photo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnA4Photo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -488,6 +500,7 @@
             this.btn5RPhoto.BorderThickness = 2;
             this.btn5RPhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btn5RPhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btn5RPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5RPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn5RPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn5RPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -510,6 +523,7 @@
             this.btn4RPhoto.BorderThickness = 2;
             this.btn4RPhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btn4RPhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btn4RPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4RPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn4RPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn4RPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -532,6 +546,7 @@
             this.btn3RPhoto.BorderThickness = 2;
             this.btn3RPhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btn3RPhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btn3RPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3RPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn3RPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn3RPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -575,6 +590,7 @@
             this.btnColoredPhoto.BorderThickness = 2;
             this.btnColoredPhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnColoredPhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnColoredPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnColoredPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnColoredPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnColoredPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -619,6 +635,7 @@
             this.btnIDPhoto.BorderThickness = 2;
             this.btnIDPhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnIDPhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnIDPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIDPhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnIDPhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnIDPhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -642,6 +659,7 @@
             this.btnImagePhoto.BorderThickness = 2;
             this.btnImagePhoto.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnImagePhoto.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnImagePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImagePhoto.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnImagePhoto.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnImagePhoto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -686,6 +704,7 @@
             this.btnProceed.BorderRadius = 15;
             this.btnProceed.BorderThickness = 2;
             this.btnProceed.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnProceed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProceed.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnProceed.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnProceed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -708,6 +727,7 @@
             this.btnClear.BorderRadius = 15;
             this.btnClear.BorderThickness = 2;
             this.btnClear.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -738,12 +758,13 @@
             this.txtPackagePhoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtPackagePhoto.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.txtPackagePhoto.BorderRadius = 15;
+            this.txtPackagePhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPackagePhoto.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.txtPackagePhoto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtPackagePhoto.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(42)))), ((int)(((byte)(64)))));
             this.txtPackagePhoto.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPackagePhoto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPackagePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPackagePhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtPackagePhoto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.txtPackagePhoto.ItemHeight = 30;
             this.txtPackagePhoto.Items.AddRange(new object[] {
@@ -808,29 +829,29 @@
             // 
             // dgvMain
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMain.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMain.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvMain.ColumnHeadersHeight = 15;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMain.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMain.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMain.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvMain.Location = new System.Drawing.Point(45, 521);
             this.dgvMain.Name = "dgvMain";
@@ -902,6 +923,7 @@
             this.btnDone.BorderRadius = 15;
             this.btnDone.BorderThickness = 2;
             this.btnDone.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnDone.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDone.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDone.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -915,7 +937,7 @@
             this.btnDone.Size = new System.Drawing.Size(117, 47);
             this.btnDone.TabIndex = 0;
             this.btnDone.Text = "Done";
-            this.btnDone.Click += new System.EventHandler(this.btnProceed_Click);
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // txtPayment
             // 
@@ -966,7 +988,7 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.Transparent;
-            this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotal.Cursor = System.Windows.Forms.Cursors.No;
             this.txtTotal.DefaultText = "";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -993,7 +1015,7 @@
             // txtChange
             // 
             this.txtChange.BackColor = System.Drawing.Color.Transparent;
-            this.txtChange.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtChange.Cursor = System.Windows.Forms.Cursors.No;
             this.txtChange.DefaultText = "";
             this.txtChange.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtChange.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -1035,6 +1057,7 @@
             this.btnEnter.BorderRadius = 15;
             this.btnEnter.BorderThickness = 2;
             this.btnEnter.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnEnter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEnter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEnter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

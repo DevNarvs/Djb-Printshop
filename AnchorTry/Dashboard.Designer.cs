@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnPrintshop = new Guna.UI2.WinForms.Guna2Button();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReports = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReservation = new Guna.UI2.WinForms.Guna2Button();
             this.btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnVideoke = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPartyneeds = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -49,11 +49,11 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.guna2Panel1.Controls.Add(this.btnPartyneeds);
+            this.guna2Panel1.Controls.Add(this.btnVideoke);
             this.guna2Panel1.Controls.Add(this.guna2Button1);
             this.guna2Panel1.Controls.Add(this.btnPrintshop);
             this.guna2Panel1.Controls.Add(this.btnSettings);
-            this.guna2Panel1.Controls.Add(this.btnReports);
-            this.guna2Panel1.Controls.Add(this.btnReservation);
             this.guna2Panel1.Controls.Add(this.btnDashboard);
             this.guna2Panel1.Controls.Add(this.guna2Panel2);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -61,6 +61,29 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(186, 894);
             this.guna2Panel1.TabIndex = 0;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2Button1.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.guna2Button1.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.guna2Button1.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
+            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Button1.Location = new System.Drawing.Point(0, 264);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(186, 55);
+            this.guna2Button1.TabIndex = 6;
+            this.guna2Button1.Text = "Gcash";
             // 
             // btnPrintshop
             // 
@@ -79,11 +102,11 @@
             this.btnPrintshop.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.btnPrintshop.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
             this.btnPrintshop.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnPrintshop.Location = new System.Drawing.Point(0, 319);
+            this.btnPrintshop.Location = new System.Drawing.Point(0, 209);
             this.btnPrintshop.Name = "btnPrintshop";
             this.btnPrintshop.Size = new System.Drawing.Size(186, 55);
             this.btnPrintshop.TabIndex = 5;
-            this.btnPrintshop.Text = "Plain Paper";
+            this.btnPrintshop.Text = "Printshop";
             this.btnPrintshop.Click += new System.EventHandler(this.btnPrintshop_Click);
             // 
             // btnSettings
@@ -96,7 +119,6 @@
             this.btnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSettings.FillColor = System.Drawing.Color.Transparent;
             this.btnSettings.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
@@ -108,52 +130,6 @@
             this.btnSettings.Size = new System.Drawing.Size(186, 55);
             this.btnSettings.TabIndex = 4;
             this.btnSettings.Text = "      Settings";
-            // 
-            // btnReports
-            // 
-            this.btnReports.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnReports.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReports.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnReports.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReports.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReports.FillColor = System.Drawing.Color.Transparent;
-            this.btnReports.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReports.Image = global::AnchorTry.Properties.Resources.reports;
-            this.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReports.Location = new System.Drawing.Point(0, 264);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(186, 55);
-            this.btnReports.TabIndex = 3;
-            this.btnReports.Text = "     Reports";
-            // 
-            // btnReservation
-            // 
-            this.btnReservation.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnReservation.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReservation.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.btnReservation.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.btnReservation.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReservation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReservation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReservation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReservation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReservation.FillColor = System.Drawing.Color.Transparent;
-            this.btnReservation.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReservation.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnReservation.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
-            this.btnReservation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReservation.Location = new System.Drawing.Point(0, 209);
-            this.btnReservation.Name = "btnReservation";
-            this.btnReservation.Size = new System.Drawing.Size(186, 55);
-            this.btnReservation.TabIndex = 2;
-            this.btnReservation.Text = "POS";
             // 
             // btnDashboard
             // 
@@ -177,7 +153,7 @@
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.Size = new System.Drawing.Size(186, 55);
             this.btnDashboard.TabIndex = 1;
-            this.btnDashboard.Text = "        Dashboard";
+            this.btnDashboard.Text = "Dashboard";
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // guna2Panel2
@@ -234,28 +210,51 @@
             this.panelMain.Size = new System.Drawing.Size(1153, 894);
             this.panelMain.TabIndex = 1;
             // 
-            // guna2Button1
+            // btnVideoke
             // 
-            this.guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button1.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.guna2Button1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.guna2Button1.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.guna2Button1.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.guna2Button1.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(0, 374);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(186, 55);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "Gcash";
+            this.btnVideoke.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnVideoke.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnVideoke.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnVideoke.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnVideoke.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVideoke.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVideoke.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVideoke.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVideoke.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVideoke.FillColor = System.Drawing.Color.Transparent;
+            this.btnVideoke.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVideoke.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnVideoke.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnVideoke.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
+            this.btnVideoke.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnVideoke.Location = new System.Drawing.Point(0, 319);
+            this.btnVideoke.Name = "btnVideoke";
+            this.btnVideoke.Size = new System.Drawing.Size(186, 55);
+            this.btnVideoke.TabIndex = 7;
+            this.btnVideoke.Text = "Videoke";
+            // 
+            // btnPartyneeds
+            // 
+            this.btnPartyneeds.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPartyneeds.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPartyneeds.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.btnPartyneeds.CustomBorderThickness = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnPartyneeds.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPartyneeds.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPartyneeds.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPartyneeds.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPartyneeds.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPartyneeds.FillColor = System.Drawing.Color.Transparent;
+            this.btnPartyneeds.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPartyneeds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPartyneeds.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPartyneeds.Image = global::AnchorTry.Properties.Resources.point_of_sale_24dp_FILL0_wght400_GRAD0_opsz24;
+            this.btnPartyneeds.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPartyneeds.Location = new System.Drawing.Point(0, 374);
+            this.btnPartyneeds.Name = "btnPartyneeds";
+            this.btnPartyneeds.Size = new System.Drawing.Size(186, 55);
+            this.btnPartyneeds.TabIndex = 8;
+            this.btnPartyneeds.Text = "Party Needs";
             // 
             // Dashboard
             // 
@@ -287,11 +286,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
-        private Guna.UI2.WinForms.Guna2Button btnReservation;
-        private Guna.UI2.WinForms.Guna2Button btnReports;
         private Guna.UI2.WinForms.Guna2Button btnSettings;
         private System.Windows.Forms.Panel panelMain;
         private Guna.UI2.WinForms.Guna2Button btnPrintshop;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnVideoke;
+        private Guna.UI2.WinForms.Guna2Button btnPartyneeds;
     }
 }

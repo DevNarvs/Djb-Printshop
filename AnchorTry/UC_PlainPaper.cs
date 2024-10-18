@@ -21,6 +21,7 @@ namespace AnchorTry
         double amount = 0;
         double payment = 0;
         double total = 0;
+        double finalTotal = 0;
         double change = 0;
         int reference = 0;
 
@@ -85,9 +86,6 @@ namespace AnchorTry
 
             //clearing all textbox
             txtqty.Clear();
-            txtTotal.Clear();
-            txtPayment.Clear();
-            txtChange.Clear();
         }
 
         private void btnPlainPaper_Click(object sender, EventArgs e)
@@ -113,6 +111,8 @@ namespace AnchorTry
                 btnLegalPlain.Checked = false;
                 btnColoredPlain.Checked = false;
                 btnGrayscalePlain.Checked = false;
+
+                txtChange.Clear();
             }
         }
 
@@ -138,6 +138,8 @@ namespace AnchorTry
                 btn5RPhoto.Checked = false;
                 btnA4Photo.Checked = false;
                 btnColoredPhoto.Checked = false;
+
+                txtChange.Clear();
             }
         }
 
@@ -286,25 +288,23 @@ namespace AnchorTry
                 {
                     amount = 8 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "A4" && colorType == "Colored")
                 {
                     amount = 8 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
+
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Folio" && colorType == "Colored")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Legal" && colorType == "Colored")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
+
                 }
 
 
@@ -313,25 +313,22 @@ namespace AnchorTry
                 {
                     amount = 5 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
+
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "A4" && colorType == "Grayscale")
                 {
                     amount = 6 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Folio" && colorType == "Grayscale")
                 {
                     amount = 7 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Legal" && colorType == "Grayscale")
                 {
                     amount = 7 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
 
@@ -340,25 +337,21 @@ namespace AnchorTry
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Folio" && colorType == "Colored")
                 {
                     amount = 12 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Legal" && colorType == "Colored")
                 {
                     amount = 12 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
 
@@ -367,25 +360,21 @@ namespace AnchorTry
                 {
                     amount = 5 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
                     amount = 5 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
 
@@ -394,25 +383,21 @@ namespace AnchorTry
                 {
                     amount = 12 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "A4" && colorType == "Colored")
                 {
                     amount = 12 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Folio" && colorType == "Colored")
                 {
                     amount = 15 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Legal" && colorType == "Colored")
                 {
                     amount = 15 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
 
@@ -421,25 +406,21 @@ namespace AnchorTry
                 {
                     amount = 8 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
                     amount = 8 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
 
@@ -450,25 +431,21 @@ namespace AnchorTry
                 {
                     amount = 8 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "Image" && paperSize == "4R" && colorType == "Colored")
                 {
                     amount = 10 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "Image" && paperSize == "5R" && colorType == "Colored")
                 {
                     amount = 12 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 if (paperType == "Photo Paper" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
                 {
                     amount = 30 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
                 //ID to Colored flow
@@ -476,67 +453,86 @@ namespace AnchorTry
                 {
                     amount = 30 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package B" && colorType == "Colored")
                 {
                     amount = 30 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package C" && colorType == "Colored")
                 {
                     amount = 40 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package D" && colorType == "Colored")
                 {
                     amount = 40 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package E" && colorType == "Colored")
                 {
                     amount = 50 * qty;
                     total = amount;
-                    txtTotal.Text = total.ToString();
                 }
 
-                using (var con = new SqlConnection(conString))
+
+                if (btnColoredPlain.Checked || btnGrayscalePlain.Checked || btnColoredPhoto.Checked)
                 {
-                    try
+                    using (var con = new SqlConnection(conString))
                     {
-                        con.Open();
-                        string qry = "INSERT INTO tbl_printshop (PaperType, PrintType, PaperSize, ColorType, Quantity, Amount, Reference) VALUES (@paperType, @printType, @paperSize, @colorType, @qty, @amount, @reference)";
-                        SqlCommand cmd = new SqlCommand(qry, con);
-                        cmd.Parameters.AddWithValue("@paperType", paperType);
-                        cmd.Parameters.AddWithValue("@printType", printType);
-                        cmd.Parameters.AddWithValue("@paperSize", paperSize);
-                        cmd.Parameters.AddWithValue("@colorType", colorType);
-                        cmd.Parameters.AddWithValue("@qty", qty);
-                        cmd.Parameters.AddWithValue("@amount", amount);
-                        cmd.Parameters.AddWithValue("@reference", reference);
-                        cmd.ExecuteNonQuery();
-                        con.Close();
+                        try
+                        {
 
-                        con.Open();
-                        string qryDisplay = "Select * from tbl_printshop where Reference = @ref";
-                        SqlCommand cmdView = new SqlCommand(qryDisplay, con);
-                        cmdView.Parameters.AddWithValue("@ref", reference);
-                        cmdView.CommandText = qryDisplay;
+                            con.Open();
+                            string qry = "INSERT INTO tbl_printshop (PaperType, PrintType, PaperSize, ColorType, Quantity, Amount, Reference) VALUES (@paperType, @printType, @paperSize, @colorType, @qty, @amount, @reference)";
+                            SqlCommand cmd = new SqlCommand(qry, con);
+                            cmd.Parameters.AddWithValue("@paperType", paperType);
+                            cmd.Parameters.AddWithValue("@printType", printType);
+                            cmd.Parameters.AddWithValue("@paperSize", paperSize);
+                            cmd.Parameters.AddWithValue("@colorType", colorType);
+                            cmd.Parameters.AddWithValue("@qty", qty);
+                            cmd.Parameters.AddWithValue("@amount", amount);
+                            cmd.Parameters.AddWithValue("@reference", reference);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
 
-                        SqlDataAdapter daView = new SqlDataAdapter(cmdView);
-                        DataTable dtView = new DataTable();
-                        daView.Fill(dtView);
-                        dgvMain.DataSource = dtView;
-                        con.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
+                            con.Open();
+                            string qryDisplay = "Select * from tbl_printshop where Reference = @ref AND Amount != @amount";
+                            SqlCommand cmdView = new SqlCommand(qryDisplay, con);
+                            cmdView.Parameters.AddWithValue("@ref", reference);
+                            cmdView.Parameters.AddWithValue("@amount", 0);
+                            cmdView.CommandText = qryDisplay;
+
+                            SqlDataAdapter daView = new SqlDataAdapter(cmdView);
+                            DataTable dtView = new DataTable();
+                            daView.Fill(dtView);
+                            dgvMain.DataSource = dtView;
+                            con.Close();
+
+                            if (txtTotal.Text == "")
+                            {
+                                finalTotal = amount;
+                                txtTotal.Text = finalTotal.ToString();
+                            }
+                            else
+                            {
+                                double textTotal = double.Parse(txtTotal.Text);
+                                finalTotal = textTotal + amount;
+                                txtTotal.Text = finalTotal.ToString();
+                            }
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString());
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Please fill the details!");
+                }
+                    
 
 
                 //clear all selected from Plain Paper
@@ -574,6 +570,7 @@ namespace AnchorTry
                 pnlColorPhoto.Enabled = false;
 
 
+                //txtTotal.Text = total.ToString();
                 txtqty.Clear();
 
             }
@@ -586,9 +583,9 @@ namespace AnchorTry
         {
             payment = double.Parse(txtPayment.Text);
 
-            if (payment >= total)
+            if (payment >= finalTotal)
             {
-                change = payment - total;
+                change = payment - finalTotal;
                 txtChange.Text = change.ToString();
             }
             else
@@ -617,6 +614,33 @@ namespace AnchorTry
             btn4RPhoto.Enabled = true;
             btn5RPhoto.Enabled = true;
             btnA4Photo.Enabled = true;
+        }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+            if (txtChange.Text != "")
+            {
+                //disable plain paper
+                pnlPrintTypePlain.Enabled = false;
+                pnlPaperSizePlain.Enabled = false;
+                pnlColorPlain.Enabled = false;
+
+                //disable photo paper
+                pnlPrintTypePhoto.Enabled = false;
+                pnlPackagePhoto.Enabled = false;
+                pnlPaperSizePhoto.Enabled = false;
+                pnlColorPhoto.Enabled = false;
+
+                clear();
+
+                txtTotal.Text = "";
+                txtPayment.Text = "";
+                txtChange.Text = "";
+
+
+                dgvMain.DataSource = null;
+
+            }
         }
     }
 }
