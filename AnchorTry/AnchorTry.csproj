@@ -73,6 +73,11 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="dbDatasetEWallet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbDatasetEWallet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dbSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -87,6 +92,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSetWALLETwReference.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSetWALLETwReference.xsd</DependentUpon>
     </Compile>
     <Compile Include="loginForm.cs">
       <SubType>Form</SubType>
@@ -139,6 +149,17 @@
     <EmbeddedResource Include="UC_Dashboard.resx">
       <DependentUpon>UC_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dbDatasetEWallet.xsc">
+      <DependentUpon>dbDatasetEWallet.xsd</DependentUpon>
+    </None>
+    <None Include="dbDatasetEWallet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbDatasetEWallet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbDatasetEWallet.xss">
+      <DependentUpon>dbDatasetEWallet.xsd</DependentUpon>
+    </None>
     <None Include="dbSet.xsc">
       <DependentUpon>dbSet.xsd</DependentUpon>
     </None>
@@ -171,6 +192,17 @@
     </None>
     <None Include="dbSet2.xss">
       <DependentUpon>dbSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbSetWALLETwReference.xsc">
+      <DependentUpon>dbSetWALLETwReference.xsd</DependentUpon>
+    </None>
+    <None Include="dbSetWALLETwReference.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSetWALLETwReference.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSetWALLETwReference.xss">
+      <DependentUpon>dbSetWALLETwReference.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

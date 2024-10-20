@@ -92,6 +92,7 @@
             this.tblprintshopBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_printshopTableAdapter2 = new AnchorTry.dbSet2TableAdapters.tbl_printshopTableAdapter();
             this.lblReference = new System.Windows.Forms.Label();
+            this.btnPhotoCopy = new Guna.UI2.WinForms.Guna2TileButton();
             this.pnlPaperSizePlain.SuspendLayout();
             this.pnlColorPlain.SuspendLayout();
             this.pnlPrintTypePlain.SuspendLayout();
@@ -414,7 +415,7 @@
             this.btnPlainPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlainPaper.ForeColor = System.Drawing.Color.White;
             this.btnPlainPaper.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnPlainPaper.Location = new System.Drawing.Point(514, 184);
+            this.btnPlainPaper.Location = new System.Drawing.Point(514, 157);
             this.btnPlainPaper.Name = "btnPlainPaper";
             this.btnPlainPaper.Size = new System.Drawing.Size(117, 47);
             this.btnPlainPaper.TabIndex = 0;
@@ -438,7 +439,7 @@
             this.btnPhotoPaper.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPhotoPaper.ForeColor = System.Drawing.Color.White;
             this.btnPhotoPaper.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnPhotoPaper.Location = new System.Drawing.Point(514, 237);
+            this.btnPhotoPaper.Location = new System.Drawing.Point(514, 263);
             this.btnPhotoPaper.Name = "btnPhotoPaper";
             this.btnPhotoPaper.Size = new System.Drawing.Size(117, 47);
             this.btnPhotoPaper.TabIndex = 0;
@@ -736,7 +737,7 @@
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnClear.Location = new System.Drawing.Point(514, 319);
+            this.btnClear.Location = new System.Drawing.Point(514, 341);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 47);
             this.btnClear.TabIndex = 10;
@@ -795,7 +796,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label11.Location = new System.Drawing.Point(519, 150);
+            this.label11.Location = new System.Drawing.Point(519, 134);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 20);
             this.label11.TabIndex = 7;
@@ -826,6 +827,7 @@
             this.txtqty.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtqty.TabIndex = 8;
             this.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtqty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtqty_KeyPress);
             // 
             // dgvMain
             // 
@@ -964,6 +966,7 @@
             this.txtPayment.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtPayment.TabIndex = 8;
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPayment_KeyPress);
             // 
             // tblprintshopBindingSource1
             // 
@@ -1092,11 +1095,36 @@
             this.lblReference.Size = new System.Drawing.Size(0, 13);
             this.lblReference.TabIndex = 13;
             // 
+            // btnPhotoCopy
+            // 
+            this.btnPhotoCopy.BackColor = System.Drawing.Color.Transparent;
+            this.btnPhotoCopy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPhotoCopy.BorderRadius = 15;
+            this.btnPhotoCopy.BorderThickness = 2;
+            this.btnPhotoCopy.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnPhotoCopy.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPhotoCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPhotoCopy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhotoCopy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPhotoCopy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPhotoCopy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPhotoCopy.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnPhotoCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPhotoCopy.ForeColor = System.Drawing.Color.White;
+            this.btnPhotoCopy.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnPhotoCopy.Location = new System.Drawing.Point(514, 210);
+            this.btnPhotoCopy.Name = "btnPhotoCopy";
+            this.btnPhotoCopy.Size = new System.Drawing.Size(117, 47);
+            this.btnPhotoCopy.TabIndex = 14;
+            this.btnPhotoCopy.Text = "Photo Copy";
+            this.btnPhotoCopy.Click += new System.EventHandler(this.btnPhotoCopy_Click);
+            // 
             // UC_PlainPaper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.btnPhotoCopy);
             this.Controls.Add(this.lblReference);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -1215,5 +1243,6 @@
         private dbSet2TableAdapters.tbl_printshopTableAdapter tbl_printshopTableAdapter2;
         private System.Windows.Forms.BindingSource tblprintshopBindingSource4;
         public System.Windows.Forms.Label lblReference;
+        private Guna.UI2.WinForms.Guna2TileButton btnPhotoCopy;
     }
 }

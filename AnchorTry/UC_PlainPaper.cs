@@ -96,6 +96,7 @@ namespace AnchorTry
                 pnlPaperSizePlain.Enabled = true;
                 pnlColorPlain.Enabled = true;
 
+
                 pnlPrintTypePhoto.Enabled = false;
                 pnlPackagePhoto.Enabled = false;
                 pnlPaperSizePhoto.Enabled = false;
@@ -147,7 +148,7 @@ namespace AnchorTry
         {
             //clear all selected btn
             clear();
-            MessageBox.Show("Cleared Successfully!!! \nPlease Select Paper");
+            MessageBox.Show("Cleared Successfully!!!");
 
 
         }
@@ -164,6 +165,10 @@ namespace AnchorTry
                 else if (btnPhotoPaper.Checked)
                 {
                     paperType = "Photo Paper";
+                }
+                else if (btnPhotoCopy.Checked)
+                {
+                    paperType = "Photo Copy";
                 }
 
                 //Plain Paper
@@ -424,6 +429,149 @@ namespace AnchorTry
                 }
 
 
+                //Photo Copy
+                //checking amount
+                //Document to Colored flow
+                if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Letter" && colorType == "Colored")
+                {
+                    amount = 5 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "A4" && colorType == "Colored")
+                {
+                    amount = 8 * qty;
+                    total = amount;
+
+                }
+                else if (paperType == " " && printType == "Document" && paperSize == "Folio" && colorType == "Colored")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Legal" && colorType == "Colored")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+
+                }
+
+
+                //Document to Grayscale flow
+                if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Letter" && colorType == "Grayscale")
+                {
+                    amount = 5 * qty;
+                    total = amount;
+
+                }
+                else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "A4" && colorType == "Grayscale")
+                {
+                    amount = 6 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Folio" && colorType == "Grayscale")
+                {
+                    amount = 7 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Legal" && colorType == "Grayscale")
+                {
+                    amount = 7 * qty;
+                    total = amount;
+                }
+
+
+                //Image to Colored flow
+                if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Letter" && colorType == "Colored")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Folio" && colorType == "Colored")
+                {
+                    amount = 12 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Legal" && colorType == "Colored")
+                {
+                    amount = 12 * qty;
+                    total = amount;
+                }
+
+
+                //Image to Grayscale flow
+                if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Letter" && colorType == "Grayscale")
+                {
+                    amount = 5 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "A4" && colorType == "Grayscale")
+                {
+                    amount = 5 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Folio" && colorType == "Grayscale")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Legal" && colorType == "Grayscale")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+
+
+                //Full image to Colored flow
+                if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Letter" && colorType == "Colored")
+                {
+                    amount = 12 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "A4" && colorType == "Colored")
+                {
+                    amount = 12 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Folio" && colorType == "Colored")
+                {
+                    amount = 15 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Legal" && colorType == "Colored")
+                {
+                    amount = 15 * qty;
+                    total = amount;
+                }
+
+
+                //Full image to Grayscale flow
+                if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Letter" && colorType == "Grayscale")
+                {
+                    amount = 8 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "A4" && colorType == "Grayscale")
+                {
+                    amount = 8 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Folio" && colorType == "Grayscale")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+                else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Legal" && colorType == "Grayscale")
+                {
+                    amount = 10 * qty;
+                    total = amount;
+                }
+
+
                 //checking amount
                 //Photo Paper
                 //Image to Colored flow
@@ -579,18 +727,45 @@ namespace AnchorTry
                 MessageBox.Show("Please Input Quantity");
             }
         }
+
+        private void btnPhotoCopy_Click(object sender, EventArgs e)
+        {
+           if (btnPhotoCopy.Checked)
+            {
+                //enable plain paper
+                pnlPrintTypePlain.Enabled = true;
+                pnlPaperSizePlain.Enabled = true;
+                pnlColorPlain.Enabled = true;
+
+
+                //disable photo paper
+                pnlPrintTypePhoto.Enabled = false;
+                pnlPackagePhoto.Enabled = false;
+                pnlPaperSizePhoto.Enabled = false;
+                pnlColorPhoto.Enabled = false;
+
+
+            }
+        }
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            payment = double.Parse(txtPayment.Text);
+            try
+            {
+                payment = double.Parse(txtPayment.Text);
 
-            if (payment >= finalTotal)
-            {
-                change = payment - finalTotal;
-                txtChange.Text = change.ToString();
+                if (payment >= finalTotal)
+                {
+                    change = payment - finalTotal;
+                    txtChange.Text = change.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Insufficient Payment");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Insufficient Payment");
+                Console.WriteLine(ex.ToString());
             }
         }
 
@@ -643,5 +818,23 @@ namespace AnchorTry
 
             }
         }
+
+        private void txtqty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPayment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+       
     }
 }
