@@ -75,5 +75,11 @@ namespace AnchorTry
             ucWallets uc = new ucWallets();
             addUserControl(uc);
         }
+
+        private void btnVideoke_Click(object sender, EventArgs e)
+        {
+            ucVideoke uc = new ucVideoke();
+            addUserControl(uc);
+        }
     }
 }
