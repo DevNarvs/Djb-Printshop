@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static AnchorTry.Dashboard;
 
 namespace AnchorTry
 {
@@ -60,6 +62,9 @@ namespace AnchorTry
             btnLegalPlain.Checked = false;
             btnColoredPlain.Checked = false;
             btnGrayscalePlain.Checked = false;
+
+            //PhotoCopy
+            btnPhotoCopy.Checked = false;
 
             //clear all selected from Photo Paper
             btnPhotoPaper.Checked = false;
@@ -287,145 +292,575 @@ namespace AnchorTry
                 reference = Convert.ToInt32(lblReference.Text);
 
 
+
                 //checking amount
                 //Document to Colored flow
                 if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    } 
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
 
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
 
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuLegalCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Document to Grayscale flow
                 if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
 
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 6 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 7 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Document" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 7 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainDocuLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Image to Colored flow
                 if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgLongCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Image to Grayscale flow
                 if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainImgLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Full image to Colored flow
                 if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 15 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 15 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgLongCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Full image to Grayscale flow
                 if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Plain Paper" && printType == "Full Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PlainFImgLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
@@ -434,141 +869,571 @@ namespace AnchorTry
                 //Document to Colored flow
                 if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
 
                 }
                 else if (paperType == " " && printType == "Document" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
 
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuLongCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Document to Grayscale flow
                 if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
 
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 6 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 7 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Document" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 7 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyDocuLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Image to Colored flow
                 if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgLongCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Image to Grayscale flow
                 if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 5 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyImgLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Full image to Colored flow
                 if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Letter" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgLetCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Folio" && colorType == "Colored")
                 {
-                    amount = 15 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgFolioCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Legal" && colorType == "Colored")
                 {
-                    amount = 15 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgLongCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
                 //Full image to Grayscale flow
                 if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Letter" && colorType == "Grayscale")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgLetBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "A4" && colorType == "Grayscale")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgA4Blck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Folio" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgFolioBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Copy" && printType == "Full Image" && paperSize == "Legal" && colorType == "Grayscale")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "CopyFImgLongBlck");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
@@ -577,50 +1442,212 @@ namespace AnchorTry
                 //Image to Colored flow
                 if (paperType == "Photo Paper" && printType == "Image" && paperSize == "3R" && colorType == "Colored")
                 {
-                    amount = 8 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoImg3RCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "Image" && paperSize == "4R" && colorType == "Colored")
                 {
-                    amount = 10 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoImg4RCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "Image" && paperSize == "5R" && colorType == "Colored")
                 {
-                    amount = 12 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoImg5RCol");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 if (paperType == "Photo Paper" && printType == "Image" && paperSize == "A4" && colorType == "Colored")
                 {
-                    amount = 30 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoImgA4Col");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 //ID to Colored flow
                 if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package A" && colorType == "Colored")
                 {
-                    amount = 30 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoIDA");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package B" && colorType == "Colored")
                 {
-                    amount = 30 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoIDB");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package C" && colorType == "Colored")
                 {
-                    amount = 40 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoIDC");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package D" && colorType == "Colored")
                 {
-                    amount = 40 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoIDD");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
                 else if (paperType == "Photo Paper" && printType == "ID" && paperSize == "Package E" && colorType == "Colored")
                 {
-                    amount = 50 * qty;
-                    total = amount;
+                    using (var con = new SqlConnection(conString))
+                    {
+                        con.Open();
+                        string qry = "Select * from tbl_PriceList where ItemName = @itemName";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
+                        {
+                            cmd.Parameters.AddWithValue("@itemName", "PhotoIDE");
+
+                            using (SqlDataReader rd = cmd.ExecuteReader())
+                            {
+                                while (rd.Read())
+                                {
+                                    int price = rd.GetInt32(2);
+                                    amount = price * qty;
+                                    total = amount;
+                                }
+                            }
+                        }
+                    }
                 }
 
 
@@ -680,7 +1707,7 @@ namespace AnchorTry
                 {
                     MessageBox.Show("Please fill the details!");
                 }
-                    
+
 
 
                 //clear all selected from Plain Paper
@@ -730,7 +1757,7 @@ namespace AnchorTry
 
         private void btnPhotoCopy_Click(object sender, EventArgs e)
         {
-           if (btnPhotoCopy.Checked)
+            if (btnPhotoCopy.Checked)
             {
                 //enable plain paper
                 pnlPrintTypePlain.Enabled = true;
@@ -795,6 +1822,8 @@ namespace AnchorTry
         {
             if (txtChange.Text != "")
             {
+                dgvMain.DataSource = null;
+
                 //disable plain paper
                 pnlPrintTypePlain.Enabled = false;
                 pnlPaperSizePlain.Enabled = false;
@@ -812,9 +1841,9 @@ namespace AnchorTry
                 txtPayment.Text = "";
                 txtChange.Text = "";
 
-
-
-                dgvMain.DataSource = null;
+                //reset the reference after transaction
+                string referenceHelper = ReferenceHelper.GenerateReferenceNumberHelper();
+                lblReference.Text = referenceHelper;
 
             }
         }
@@ -835,6 +1864,6 @@ namespace AnchorTry
             }
         }
 
-       
+
     }
 }

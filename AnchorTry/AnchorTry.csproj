@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangePricing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePricing.Designer.cs">
+      <DependentUpon>ChangePricing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,10 +109,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dbsetPriceList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbsetPriceList.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dbsetVideoke.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbsetVideoke.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbSetVideoke101.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSetVideoke101.xsd</DependentUpon>
     </Compile>
     <Compile Include="dbSetWALLETwReference.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -121,6 +137,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="ucVideoke.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -150,6 +172,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>videokeFinaldbSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ChangePricing.resx">
+      <DependentUpon>ChangePricing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +191,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ucVideoke.resx">
       <DependentUpon>ucVideoke.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,6 +272,17 @@
     <None Include="dbSet2.xss">
       <DependentUpon>dbSet2.xsd</DependentUpon>
     </None>
+    <None Include="dbsetPriceList.xsc">
+      <DependentUpon>dbsetPriceList.xsd</DependentUpon>
+    </None>
+    <None Include="dbsetPriceList.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbsetPriceList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbsetPriceList.xss">
+      <DependentUpon>dbsetPriceList.xsd</DependentUpon>
+    </None>
     <None Include="dbsetVideoke.xsc">
       <DependentUpon>dbsetVideoke.xsd</DependentUpon>
     </None>
@@ -254,6 +293,17 @@
     </None>
     <None Include="dbsetVideoke.xss">
       <DependentUpon>dbsetVideoke.xsd</DependentUpon>
+    </None>
+    <None Include="dbSetVideoke101.xsc">
+      <DependentUpon>dbSetVideoke101.xsd</DependentUpon>
+    </None>
+    <None Include="dbSetVideoke101.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSetVideoke101.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSetVideoke101.xss">
+      <DependentUpon>dbSetVideoke101.xsd</DependentUpon>
     </None>
     <None Include="dbSetWALLETwReference.xsc">
       <DependentUpon>dbSetWALLETwReference.xsd</DependentUpon>

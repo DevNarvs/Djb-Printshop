@@ -49,6 +49,8 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.tblReservationBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.videokeFinaldbSet = new AnchorTry.videokeFinaldbSet();
             this.tblReservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetVideoke = new AnchorTry.DatabaseDataSetVideoke();
             this.datasetVideoke = new AnchorTry.datasetVideoke();
@@ -65,9 +67,10 @@
             this.tblReservationBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_ReservationTableAdapter1 = new AnchorTry.dbsetVideokeTableAdapters.tbl_ReservationTableAdapter();
             this.tblReservationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.videokeFinaldbSet = new AnchorTry.videokeFinaldbSet();
-            this.tblReservationBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_ReservationTableAdapter2 = new AnchorTry.videokeFinaldbSetTableAdapters.tbl_ReservationTableAdapter();
+            this.dbSetVideoke101 = new AnchorTry.dbSetVideoke101();
+            this.tblReservationBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_ReservationTableAdapter3 = new AnchorTry.dbSetVideoke101TableAdapters.tbl_ReservationTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,8 +79,11 @@
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reservationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.videokeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endReservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetVideoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasetVideoke)).BeginInit();
@@ -86,8 +92,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbsetVideoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -376,8 +382,9 @@
             this.deliveryTimeDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
             this.reservationTimeDataGridViewTextBoxColumn,
-            this.videokeIDDataGridViewTextBoxColumn});
-            this.dgvTransactions.DataSource = this.tblReservationBindingSource3;
+            this.videokeIDDataGridViewTextBoxColumn,
+            this.endReservationDataGridViewTextBoxColumn});
+            this.dgvTransactions.DataSource = this.tblReservationBindingSource4;
             this.dgvTransactions.GridColor = System.Drawing.Color.Navy;
             this.dgvTransactions.Location = new System.Drawing.Point(24, 483);
             this.dgvTransactions.MultiSelect = false;
@@ -387,6 +394,16 @@
             this.dgvTransactions.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTransactions.Size = new System.Drawing.Size(1106, 392);
             this.dgvTransactions.TabIndex = 32;
+            // 
+            // tblReservationBindingSource3
+            // 
+            this.tblReservationBindingSource3.DataMember = "tbl_Reservation";
+            this.tblReservationBindingSource3.DataSource = this.videokeFinaldbSet;
+            // 
+            // videokeFinaldbSet
+            // 
+            this.videokeFinaldbSet.DataSetName = "videokeFinaldbSet";
+            this.videokeFinaldbSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblReservationBindingSource
             // 
@@ -428,6 +445,7 @@
             this.btnAdd.Size = new System.Drawing.Size(230, 36);
             this.btnAdd.TabIndex = 33;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Visible = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // pictureBox2
@@ -457,6 +475,7 @@
             this.txtFileName.SelectedText = "";
             this.txtFileName.Size = new System.Drawing.Size(230, 36);
             this.txtFileName.TabIndex = 35;
+            this.txtFileName.Visible = false;
             // 
             // lblFileName
             // 
@@ -511,19 +530,23 @@
             this.tblReservationBindingSource2.DataMember = "tbl_Reservation";
             this.tblReservationBindingSource2.DataSource = this.dbsetVideoke;
             // 
-            // videokeFinaldbSet
-            // 
-            this.videokeFinaldbSet.DataSetName = "videokeFinaldbSet";
-            this.videokeFinaldbSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblReservationBindingSource3
-            // 
-            this.tblReservationBindingSource3.DataMember = "tbl_Reservation";
-            this.tblReservationBindingSource3.DataSource = this.videokeFinaldbSet;
-            // 
             // tbl_ReservationTableAdapter2
             // 
             this.tbl_ReservationTableAdapter2.ClearBeforeFill = true;
+            // 
+            // dbSetVideoke101
+            // 
+            this.dbSetVideoke101.DataSetName = "dbSetVideoke101";
+            this.dbSetVideoke101.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblReservationBindingSource4
+            // 
+            this.tblReservationBindingSource4.DataMember = "tbl_Reservation";
+            this.tblReservationBindingSource4.DataSource = this.dbSetVideoke101;
+            // 
+            // tbl_ReservationTableAdapter3
+            // 
+            this.tbl_ReservationTableAdapter3.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -531,6 +554,7 @@
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 50;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -538,7 +562,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 150;
+            this.nameDataGridViewTextBoxColumn.Width = 130;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -546,7 +570,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 150;
+            this.addressDataGridViewTextBoxColumn.Width = 120;
             // 
             // contactDataGridViewTextBoxColumn
             // 
@@ -576,14 +600,23 @@
             this.reservationTimeDataGridViewTextBoxColumn.HeaderText = "Reservation_Time";
             this.reservationTimeDataGridViewTextBoxColumn.Name = "reservationTimeDataGridViewTextBoxColumn";
             this.reservationTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservationTimeDataGridViewTextBoxColumn.Width = 150;
+            this.reservationTimeDataGridViewTextBoxColumn.Width = 130;
             // 
             // videokeIDDataGridViewTextBoxColumn
             // 
             this.videokeIDDataGridViewTextBoxColumn.DataPropertyName = "Videoke_ID";
-            this.videokeIDDataGridViewTextBoxColumn.HeaderText = "Videoke_ID";
+            this.videokeIDDataGridViewTextBoxColumn.HeaderText = "V_ID";
             this.videokeIDDataGridViewTextBoxColumn.Name = "videokeIDDataGridViewTextBoxColumn";
             this.videokeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.videokeIDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // endReservationDataGridViewTextBoxColumn
+            // 
+            this.endReservationDataGridViewTextBoxColumn.DataPropertyName = "End_Reservation";
+            this.endReservationDataGridViewTextBoxColumn.HeaderText = "End_Reservation";
+            this.endReservationDataGridViewTextBoxColumn.Name = "endReservationDataGridViewTextBoxColumn";
+            this.endReservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.endReservationDataGridViewTextBoxColumn.Width = 200;
             // 
             // ucVideoke
             // 
@@ -618,6 +651,8 @@
             this.Load += new System.EventHandler(this.ucVideoke_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetVideoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasetVideoke)).EndInit();
@@ -626,8 +661,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbsetVideoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,6 +704,12 @@
         private dbsetVideoke dbsetVideoke;
         private dbsetVideokeTableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter1;
         private System.Windows.Forms.BindingSource tblReservationBindingSource2;
+        private System.Windows.Forms.BindingSource tblReservationBindingSource3;
+        private videokeFinaldbSet videokeFinaldbSet;
+        private videokeFinaldbSetTableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter2;
+        private System.Windows.Forms.BindingSource tblReservationBindingSource4;
+        private dbSetVideoke101 dbSetVideoke101;
+        private dbSetVideoke101TableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
@@ -677,8 +718,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn videokeIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource tblReservationBindingSource3;
-        private videokeFinaldbSet videokeFinaldbSet;
-        private videokeFinaldbSetTableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endReservationDataGridViewTextBoxColumn;
     }
 }

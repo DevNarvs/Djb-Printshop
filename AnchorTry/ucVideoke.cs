@@ -27,6 +27,7 @@ namespace AnchorTry
 
         DateTime fullSelectedDateTime = DateTime.Now;
         DateTime selectedDate = DateTime.Now.Date;
+        int getVideokeID = 0;
 
 
         public ucVideoke()
@@ -165,25 +166,46 @@ namespace AnchorTry
                     // Get the date for tomorrow
                     DateTime selectedNextDay = selectedDate.AddDays(1);
 
-                    // Combine the selected date with the selected time
+                    DateTime selectedCurrFullDate = new DateTime(selectedDate.Year, selectedDate.Month, selectedDate.Day,
+                       selectedDateTime.Hour, selectedDateTime.Minute, 0); // Create full DateTime object
+
+                    // Combine the selected date with the selected time for next day (End of reservation)
                     fullSelectedDateTime = new DateTime(selectedNextDay.Year, selectedNextDay.Month, selectedNextDay.Day,
                         selectedDateTime.Hour, selectedDateTime.Minute, 0); // Create full DateTime object
 
-
-
-
                     // Proceed with reservation
-                    reservationFunction(selectedTime, datePickerValue, stringTime, fullSelectedDateTime);
-                    LoadImageIds();
-                    DisplayImage();
+                    reservationFunction(selectedTime, datePickerValue, stringTime, fullSelectedDateTime, selectedCurrFullDate);
                 }
             }
         }
 
-        private void reservationFunction(string time, string date, string reservationTime, DateTime endReservation)
+        private void reservationFunction(string time, string date, string reservationTime, DateTime endReservation, DateTime selectedCurrFullDate)
         {
             try
             {
+                using (SqlConnection connection = new SqlConnection(conString))
+                {
+                    connection.Open();
+
+                    // Check if there is an existing reservation for the selected videoke within the next 24 hours
+                    string checkQuery = "SELECT COUNT(*) FROM tbl_Reservation WHERE Videoke_ID = @videokeID AND End_Reservation > @selectedDate";
+
+                    using (SqlCommand checkCommand = new SqlCommand(checkQuery, connection))
+                    {
+                        checkCommand.Parameters.AddWithValue("@videokeID", imageIds[currentImageIndex]);
+                        checkCommand.Parameters.AddWithValue("@selectedDate", selectedCurrFullDate);
+
+                        int reservationCount = (int)checkCommand.ExecuteScalar();
+                        if (reservationCount > 0)
+                        {
+                            MessageBox.Show("This Videoke is already reserved for the next 24 hours.");
+                            return; // Exit the function if there is an existing reservation
+                        }
+                    }
+                }
+            
+
+
                 using (SqlConnection connection = new SqlConnection(conString))
                 {
                     connection.Open();
@@ -207,9 +229,6 @@ namespace AnchorTry
                         // Execute the query
                         int rowsAffected = command.ExecuteNonQuery();
                         MessageBox.Show("Videoke reserved successfully.");
-
-
-
 
                         try
                         {
@@ -252,12 +271,10 @@ namespace AnchorTry
                 MessageBox.Show("Error: " + ex.Message);
             }
 
-           
+
         }
         private void TimeOut(DateTime fullSelectedDateTime, DateTime selectedDate)
         {
-            int getVideokeID = 0;
-
             try
             {
                 using (SqlConnection con = new SqlConnection(conString))
@@ -289,71 +306,60 @@ namespace AnchorTry
             {
                 DateTime getEndReservation = DateTime.Now;
 
-                //// Check if the selected date and time matches tomorrow
-                //if (fullSelectedDateTime.Date == getEndReservation && fullSelectedDateTime.TimeOfDay == getEndReservation.TimeOfDay)
-                //{
-                //    MessageBox.Show("Status: Not Available"); // Can't reserve for tomorrow at this time
-                //}
-                //else if (selectedDate < getEndReservation.Date)
-                //{
-                //    MessageBox.Show("Status: Not Available"); // Can't reserve for tomorrow at this time
-                //}
-                //else
-                //{
 
-                    try
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(conString))
                     {
-                        using (SqlConnection con = new SqlConnection(conString))
+                        con.Open();
+
+                        string qry = "Select * from tbl_Reservation where Videoke_ID = @id";
+                        SqlCommand cmd = new SqlCommand(qry, con);
+                        cmd.Parameters.AddWithValue("@id", getVideokeID);
+
+                        using (SqlDataReader rdr = cmd.ExecuteReader())
                         {
-                            con.Open();
-
-                            string qry = "Select * from tbl_Reservation where Videoke_ID = @id";
-                            SqlCommand cmd = new SqlCommand(qry, con);
-                            cmd.Parameters.AddWithValue("@id", getVideokeID);
-
-                            using (SqlDataReader rdr = cmd.ExecuteReader())
+                            while (rdr.Read())
                             {
-                                while (rdr.Read())
-                                {
-                                    getEndReservation = rdr.GetDateTime(8);
-                                }
-                                rdr.Close();
+                                getEndReservation = rdr.GetDateTime(8);
                             }
-
+                            rdr.Close();
                         }
-                    }   
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
+
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
 
 
-                    try
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(conString))
                     {
-                        using (SqlConnection con = new SqlConnection(conString))
+                        con.Open();
+                        string qry = "UPDATE tbl_Videoke SET Status = @status WHERE Id = @id";
+
+                        using (SqlCommand cmd = new SqlCommand(qry, con))
                         {
-                            con.Open();
-                            string qry = "UPDATE tbl_Videoke SET Status = @status WHERE Id = @id";
+                            cmd.Parameters.AddWithValue("@status", "Available");
+                            cmd.Parameters.AddWithValue("id", getVideokeID);
 
-                            using (SqlCommand cmd = new SqlCommand(qry, con))
+                            int rowAffected1 = cmd.ExecuteNonQuery();
+
+                            if (rowAffected1 > 0)
                             {
-                                cmd.Parameters.AddWithValue("@status", "Available");
-                                cmd.Parameters.AddWithValue("id", getVideokeID);
-
-                                int rowAffected1 = cmd.ExecuteNonQuery();
-
-                                if (rowAffected1 > 0)
-                                {
-                                    LoadImageIds(); // Load image IDs from the database on startup
-                                    DisplayImage(); // Display the first image
-                                }
+                                LoadImageIds(); // Load image IDs from the database on startup
+                                DisplayImage(); // Display the first image
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
                 //}
             }
         }

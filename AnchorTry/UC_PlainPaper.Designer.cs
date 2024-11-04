@@ -1094,6 +1094,7 @@
             this.lblReference.Name = "lblReference";
             this.lblReference.Size = new System.Drawing.Size(0, 13);
             this.lblReference.TabIndex = 13;
+            this.lblReference.Visible = false;
             // 
             // btnPhotoCopy
             // 
