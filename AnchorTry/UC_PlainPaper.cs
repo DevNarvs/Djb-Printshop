@@ -1845,6 +1845,12 @@ namespace AnchorTry
                 string referenceHelper = ReferenceHelper.GenerateReferenceNumberHelper();
                 lblReference.Text = referenceHelper;
 
+
+                MessageBox.Show("Thank you! <3");
+            }
+            else
+            {
+                MessageBox.Show("Please enter payment amount");
             }
         }
 
