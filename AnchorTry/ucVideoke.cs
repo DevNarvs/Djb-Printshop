@@ -48,11 +48,9 @@ namespace AnchorTry
                 using (SqlConnection connection = new SqlConnection(conString))
                 {
                     connection.Open();
-                    string query = "SELECT Id FROM tbl_Videoke WHERE Status = @status ORDER BY Id "; // Adjust as needed
+                    string query = "SELECT Id FROM tbl_Videoke ORDER BY Id "; // Adjust as needed
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@status", "Available");
-
                         SqlDataReader reader = command.ExecuteReader();
                         while (reader.Read())
                         {
@@ -145,7 +143,7 @@ namespace AnchorTry
                     string datePickerValue = datePicker.Value.ToString("D");
                     //Time
                     DateTime time = DateTime.Now;
-                    string stringTime = time.ToString("t");
+                    string stringTime = time.ToString("g");
 
 
                     //End of Reservation Date
@@ -203,15 +201,25 @@ namespace AnchorTry
                         }
                     }
                 }
-            
 
+                string getPaymentOption = "";
+
+
+                if (btnDP.Checked == true)
+                {
+                    getPaymentOption = "Down Payment";
+                }
+                else if (btnFP.Checked == true)
+                {
+                    getPaymentOption = "Fully Paid";
+                }
 
                 using (SqlConnection connection = new SqlConnection(conString))
                 {
                     connection.Open();
 
                     // SQL query to insert the image data
-                    string query = "INSERT INTO tbl_Reservation (Name, Address, Contact, Delivery_Time, Date, Reservation_Time, Videoke_ID, End_Reservation) VALUES (@name, @address, @contact,@time, @date, @reserveTime, @videokeID, @endReservation)";
+                    string query = "INSERT INTO tbl_Reservation (Name, Address, Contact, Delivery_Time, Date, End_Reservation, PaymentOption, Payment, Videoke_ID, Reservation_Time ) VALUES (@name, @address, @contact, @time, @date, @endReservation, @paymentOption, @payment, @videokeID, @reserveTime )";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
@@ -221,9 +229,12 @@ namespace AnchorTry
                         command.Parameters.AddWithValue("@Contact", txtContact.Text);
                         command.Parameters.AddWithValue("@time", time);
                         command.Parameters.AddWithValue("@date", date);
-                        command.Parameters.AddWithValue("@reserveTime", reservationTime);
-                        command.Parameters.AddWithValue("@videokeID", imageIds[currentImageIndex]);
                         command.Parameters.AddWithValue("@endReservation", endReservation.ToString());
+                        command.Parameters.AddWithValue("@paymentOption", getPaymentOption);
+                        command.Parameters.AddWithValue("@payment", txtPayment.Text);
+                        command.Parameters.AddWithValue("@videokeID", imageIds[currentImageIndex]);
+                        command.Parameters.AddWithValue("@reserveTime", reservationTime);
+
 
 
                         // Execute the query
@@ -253,6 +264,9 @@ namespace AnchorTry
                                     txtHr.Text = null;
                                     txtMins.Text = null;
                                     txtTT.Text = null;
+                                    txtPayment.Text = null;
+                                    btnDP.Checked = false;
+                                    btnFP.Checked = false;
 
 
                                     refreshGridView();
@@ -299,7 +313,7 @@ namespace AnchorTry
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                Console.WriteLine("Error: " + ex.Message);
             }
 
             if (getVideokeID != 0)

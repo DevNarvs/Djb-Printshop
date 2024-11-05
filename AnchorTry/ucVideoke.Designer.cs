@@ -49,6 +49,8 @@
             this.btnNext = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvTransactions = new System.Windows.Forms.DataGridView();
+            this.tblReservationBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.dbSetVideoke101 = new AnchorTry.dbSetVideoke101();
             this.tblReservationBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.videokeFinaldbSet = new AnchorTry.videokeFinaldbSet();
             this.tblReservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,20 +70,30 @@
             this.tbl_ReservationTableAdapter1 = new AnchorTry.dbsetVideokeTableAdapters.tbl_ReservationTableAdapter();
             this.tblReservationBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_ReservationTableAdapter2 = new AnchorTry.videokeFinaldbSetTableAdapters.tbl_ReservationTableAdapter();
-            this.dbSetVideoke101 = new AnchorTry.dbSetVideoke101();
-            this.tblReservationBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_ReservationTableAdapter3 = new AnchorTry.dbSetVideoke101TableAdapters.tbl_ReservationTableAdapter();
+            this.txtPayment = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnDP = new System.Windows.Forms.RadioButton();
+            this.btnFP = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dbSet101 = new AnchorTry.dbSet101();
+            this.tblReservationBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_ReservationTableAdapter4 = new AnchorTry.dbSet101TableAdapters.tbl_ReservationTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deliveryTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reservationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.videokeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endReservationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentOptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videokeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reservationTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource)).BeginInit();
@@ -92,8 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbsetVideoke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSet101)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource5)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -156,7 +168,7 @@
             this.txtContact.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtContact.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtContact.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContact.Location = new System.Drawing.Point(289, 190);
+            this.txtContact.Location = new System.Drawing.Point(24, 181);
             this.txtContact.Name = "txtContact";
             this.txtContact.PasswordChar = '\0';
             this.txtContact.PlaceholderText = "";
@@ -172,7 +184,7 @@
             this.datePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.datePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datePicker.Location = new System.Drawing.Point(24, 190);
+            this.datePicker.Location = new System.Drawing.Point(24, 267);
             this.datePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
@@ -191,7 +203,7 @@
             this.btnReserve.FillColor = System.Drawing.Color.Transparent;
             this.btnReserve.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReserve.ForeColor = System.Drawing.Color.White;
-            this.btnReserve.Location = new System.Drawing.Point(289, 232);
+            this.btnReserve.Location = new System.Drawing.Point(24, 324);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(230, 36);
             this.btnReserve.TabIndex = 8;
@@ -222,7 +234,7 @@
             // 
             this.lblContact.AutoSize = true;
             this.lblContact.ForeColor = System.Drawing.Color.White;
-            this.lblContact.Location = new System.Drawing.Point(286, 174);
+            this.lblContact.Location = new System.Drawing.Point(21, 165);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(50, 13);
             this.lblContact.TabIndex = 11;
@@ -232,7 +244,7 @@
             // 
             this.lbldateTime.AutoSize = true;
             this.lbldateTime.ForeColor = System.Drawing.Color.White;
-            this.lbldateTime.Location = new System.Drawing.Point(21, 174);
+            this.lbldateTime.Location = new System.Drawing.Point(21, 251);
             this.lbldateTime.Name = "lbldateTime";
             this.lbldateTime.Size = new System.Drawing.Size(36, 13);
             this.lbldateTime.TabIndex = 12;
@@ -261,7 +273,7 @@
             "10",
             "11",
             "12"});
-            this.txtHr.Location = new System.Drawing.Point(24, 232);
+            this.txtHr.Location = new System.Drawing.Point(287, 267);
             this.txtHr.Name = "txtHr";
             this.txtHr.Size = new System.Drawing.Size(68, 36);
             this.txtHr.TabIndex = 13;
@@ -279,7 +291,7 @@
             this.txtMins.Items.AddRange(new object[] {
             "00 ",
             "30"});
-            this.txtMins.Location = new System.Drawing.Point(99, 232);
+            this.txtMins.Location = new System.Drawing.Point(362, 267);
             this.txtMins.Name = "txtMins";
             this.txtMins.Size = new System.Drawing.Size(75, 36);
             this.txtMins.TabIndex = 14;
@@ -297,7 +309,7 @@
             this.txtTT.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.txtTT.Location = new System.Drawing.Point(180, 232);
+            this.txtTT.Location = new System.Drawing.Point(443, 267);
             this.txtTT.Name = "txtTT";
             this.txtTT.Size = new System.Drawing.Size(74, 36);
             this.txtTT.TabIndex = 15;
@@ -381,10 +393,12 @@
             this.contactDataGridViewTextBoxColumn,
             this.deliveryTimeDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.reservationTimeDataGridViewTextBoxColumn,
+            this.endReservationDataGridViewTextBoxColumn,
+            this.paymentOptionDataGridViewTextBoxColumn,
+            this.paymentDataGridViewTextBoxColumn,
             this.videokeIDDataGridViewTextBoxColumn,
-            this.endReservationDataGridViewTextBoxColumn});
-            this.dgvTransactions.DataSource = this.tblReservationBindingSource4;
+            this.reservationTimeDataGridViewTextBoxColumn});
+            this.dgvTransactions.DataSource = this.tblReservationBindingSource5;
             this.dgvTransactions.GridColor = System.Drawing.Color.Navy;
             this.dgvTransactions.Location = new System.Drawing.Point(24, 483);
             this.dgvTransactions.MultiSelect = false;
@@ -394,6 +408,16 @@
             this.dgvTransactions.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTransactions.Size = new System.Drawing.Size(1106, 392);
             this.dgvTransactions.TabIndex = 32;
+            // 
+            // tblReservationBindingSource4
+            // 
+            this.tblReservationBindingSource4.DataMember = "tbl_Reservation";
+            this.tblReservationBindingSource4.DataSource = this.dbSetVideoke101;
+            // 
+            // dbSetVideoke101
+            // 
+            this.dbSetVideoke101.DataSetName = "dbSetVideoke101";
+            this.dbSetVideoke101.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tblReservationBindingSource3
             // 
@@ -440,7 +464,7 @@
             this.btnAdd.FillColor = System.Drawing.Color.Transparent;
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(24, 353);
+            this.btnAdd.Location = new System.Drawing.Point(976, 181);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(230, 36);
             this.btnAdd.TabIndex = 33;
@@ -450,7 +474,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(289, 274);
+            this.pictureBox2.Location = new System.Drawing.Point(976, 232);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(200, 203);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -468,7 +492,7 @@
             this.txtFileName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFileName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtFileName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFileName.Location = new System.Drawing.Point(24, 311);
+            this.txtFileName.Location = new System.Drawing.Point(976, 139);
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.PasswordChar = '\0';
             this.txtFileName.PlaceholderText = "";
@@ -534,24 +558,91 @@
             // 
             this.tbl_ReservationTableAdapter2.ClearBeforeFill = true;
             // 
-            // dbSetVideoke101
-            // 
-            this.dbSetVideoke101.DataSetName = "dbSetVideoke101";
-            this.dbSetVideoke101.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblReservationBindingSource4
-            // 
-            this.tblReservationBindingSource4.DataMember = "tbl_Reservation";
-            this.tblReservationBindingSource4.DataSource = this.dbSetVideoke101;
-            // 
             // tbl_ReservationTableAdapter3
             // 
             this.tbl_ReservationTableAdapter3.ClearBeforeFill = true;
             // 
+            // txtPayment
+            // 
+            this.txtPayment.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPayment.DefaultText = "";
+            this.txtPayment.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPayment.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPayment.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPayment.Location = new System.Drawing.Point(289, 181);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.PasswordChar = '\0';
+            this.txtPayment.PlaceholderText = "Enter Amount";
+            this.txtPayment.SelectedText = "";
+            this.txtPayment.Size = new System.Drawing.Size(230, 36);
+            this.txtPayment.TabIndex = 39;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(286, 165);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Payment :";
+            // 
+            // btnDP
+            // 
+            this.btnDP.AutoSize = true;
+            this.btnDP.ForeColor = System.Drawing.Color.White;
+            this.btnDP.Location = new System.Drawing.Point(346, 163);
+            this.btnDP.Name = "btnDP";
+            this.btnDP.Size = new System.Drawing.Size(97, 17);
+            this.btnDP.TabIndex = 41;
+            this.btnDP.TabStop = true;
+            this.btnDP.Text = "Down Payment";
+            this.btnDP.UseVisualStyleBackColor = true;
+            // 
+            // btnFP
+            // 
+            this.btnFP.AutoSize = true;
+            this.btnFP.ForeColor = System.Drawing.Color.White;
+            this.btnFP.Location = new System.Drawing.Point(449, 163);
+            this.btnFP.Name = "btnFP";
+            this.btnFP.Size = new System.Drawing.Size(70, 17);
+            this.btnFP.TabIndex = 42;
+            this.btnFP.TabStop = true;
+            this.btnFP.Text = "Fully Paid";
+            this.btnFP.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(286, 251);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 43;
+            this.label3.Text = "Time :";
+            // 
+            // dbSet101
+            // 
+            this.dbSet101.DataSetName = "dbSet101";
+            this.dbSet101.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblReservationBindingSource5
+            // 
+            this.tblReservationBindingSource5.DataMember = "tbl_Reservation";
+            this.tblReservationBindingSource5.DataSource = this.dbSet101;
+            // 
+            // tbl_ReservationTableAdapter4
+            // 
+            this.tbl_ReservationTableAdapter4.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Width = 50;
@@ -562,7 +653,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 130;
+            this.nameDataGridViewTextBoxColumn.Width = 120;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -570,7 +661,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 120;
+            this.addressDataGridViewTextBoxColumn.Width = 150;
             // 
             // contactDataGridViewTextBoxColumn
             // 
@@ -582,7 +673,7 @@
             // deliveryTimeDataGridViewTextBoxColumn
             // 
             this.deliveryTimeDataGridViewTextBoxColumn.DataPropertyName = "Delivery_Time";
-            this.deliveryTimeDataGridViewTextBoxColumn.HeaderText = "Delivery_Time";
+            this.deliveryTimeDataGridViewTextBoxColumn.HeaderText = "Delivery Time";
             this.deliveryTimeDataGridViewTextBoxColumn.Name = "deliveryTimeDataGridViewTextBoxColumn";
             this.deliveryTimeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -592,7 +683,37 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 200;
+            this.dateDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // endReservationDataGridViewTextBoxColumn
+            // 
+            this.endReservationDataGridViewTextBoxColumn.DataPropertyName = "End_Reservation";
+            this.endReservationDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.endReservationDataGridViewTextBoxColumn.HeaderText = "End Reservation";
+            this.endReservationDataGridViewTextBoxColumn.Name = "endReservationDataGridViewTextBoxColumn";
+            this.endReservationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.endReservationDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // paymentOptionDataGridViewTextBoxColumn
+            // 
+            this.paymentOptionDataGridViewTextBoxColumn.DataPropertyName = "PaymentOption";
+            this.paymentOptionDataGridViewTextBoxColumn.HeaderText = "DP/FP";
+            this.paymentOptionDataGridViewTextBoxColumn.Name = "paymentOptionDataGridViewTextBoxColumn";
+            this.paymentOptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentDataGridViewTextBoxColumn
+            // 
+            this.paymentDataGridViewTextBoxColumn.DataPropertyName = "Payment";
+            this.paymentDataGridViewTextBoxColumn.HeaderText = "Payment";
+            this.paymentDataGridViewTextBoxColumn.Name = "paymentDataGridViewTextBoxColumn";
+            this.paymentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // videokeIDDataGridViewTextBoxColumn
+            // 
+            this.videokeIDDataGridViewTextBoxColumn.DataPropertyName = "Videoke_ID";
+            this.videokeIDDataGridViewTextBoxColumn.HeaderText = "Videoke_ID";
+            this.videokeIDDataGridViewTextBoxColumn.Name = "videokeIDDataGridViewTextBoxColumn";
+            this.videokeIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // reservationTimeDataGridViewTextBoxColumn
             // 
@@ -600,29 +721,18 @@
             this.reservationTimeDataGridViewTextBoxColumn.HeaderText = "Reservation_Time";
             this.reservationTimeDataGridViewTextBoxColumn.Name = "reservationTimeDataGridViewTextBoxColumn";
             this.reservationTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.reservationTimeDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // videokeIDDataGridViewTextBoxColumn
-            // 
-            this.videokeIDDataGridViewTextBoxColumn.DataPropertyName = "Videoke_ID";
-            this.videokeIDDataGridViewTextBoxColumn.HeaderText = "V_ID";
-            this.videokeIDDataGridViewTextBoxColumn.Name = "videokeIDDataGridViewTextBoxColumn";
-            this.videokeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.videokeIDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // endReservationDataGridViewTextBoxColumn
-            // 
-            this.endReservationDataGridViewTextBoxColumn.DataPropertyName = "End_Reservation";
-            this.endReservationDataGridViewTextBoxColumn.HeaderText = "End_Reservation";
-            this.endReservationDataGridViewTextBoxColumn.Name = "endReservationDataGridViewTextBoxColumn";
-            this.endReservationDataGridViewTextBoxColumn.ReadOnly = true;
-            this.endReservationDataGridViewTextBoxColumn.Width = 200;
+            this.reservationTimeDataGridViewTextBoxColumn.Width = 150;
             // 
             // ucVideoke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnFP);
+            this.Controls.Add(this.btnDP);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPayment);
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.txtFileName);
@@ -651,6 +761,8 @@
             this.Load += new System.EventHandler(this.ucVideoke_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransactions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videokeFinaldbSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource)).EndInit();
@@ -661,8 +773,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbsetVideoke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbSetVideoke101)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbSet101)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblReservationBindingSource5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -710,14 +822,24 @@
         private System.Windows.Forms.BindingSource tblReservationBindingSource4;
         private dbSetVideoke101 dbSetVideoke101;
         private dbSetVideoke101TableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter3;
+        private Guna.UI2.WinForms.Guna2TextBox txtPayment;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton btnDP;
+        private System.Windows.Forms.RadioButton btnFP;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource tblReservationBindingSource5;
+        private dbSet101 dbSet101;
+        private dbSet101TableAdapters.tbl_ReservationTableAdapter tbl_ReservationTableAdapter4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contactDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deliveryTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reservationTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn videokeIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endReservationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentOptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn videokeIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reservationTimeDataGridViewTextBoxColumn;
     }
 }

@@ -37,11 +37,8 @@
             this.btnChange = new Guna.UI2.WinForms.Guna2Button();
             this.tbl_PriceListTableAdapter = new AnchorTry.dbsetPriceListTableAdapters.tbl_PriceListTableAdapter();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnOnOff = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtVideokePrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCurrPrice = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tblPriceListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbsetPriceList)).BeginInit();
@@ -53,11 +50,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(183, 28);
+            this.label1.Location = new System.Drawing.Point(99, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 42);
+            this.label1.Size = new System.Drawing.Size(455, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Update Pricing";
+            this.label1.Text = "Update Printshop Pricing";
             // 
             // cbPaper
             // 
@@ -117,7 +114,7 @@
             this.btnChange.FillColor = System.Drawing.Color.Transparent;
             this.btnChange.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChange.ForeColor = System.Drawing.Color.White;
-            this.btnChange.Location = new System.Drawing.Point(223, 356);
+            this.btnChange.Location = new System.Drawing.Point(235, 274);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(151, 36);
             this.btnChange.TabIndex = 37;
@@ -131,11 +128,8 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.guna2Panel1.Controls.Add(this.btnOnOff);
-            this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label2);
-            this.guna2Panel1.Controls.Add(this.txtVideokePrice);
             this.guna2Panel1.Controls.Add(this.txtCurrPrice);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.btnChange);
@@ -143,37 +137,8 @@
             this.guna2Panel1.Controls.Add(this.cbPaper);
             this.guna2Panel1.Location = new System.Drawing.Point(1, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(629, 412);
+            this.guna2Panel1.Size = new System.Drawing.Size(629, 343);
             this.guna2Panel1.TabIndex = 38;
-            // 
-            // btnOnOff
-            // 
-            this.btnOnOff.AutoSize = true;
-            this.btnOnOff.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnOnOff.CheckedState.BorderRadius = 0;
-            this.btnOnOff.CheckedState.BorderThickness = 0;
-            this.btnOnOff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnOnOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnOnOff.Location = new System.Drawing.Point(223, 310);
-            this.btnOnOff.Name = "btnOnOff";
-            this.btnOnOff.Size = new System.Drawing.Size(15, 14);
-            this.btnOnOff.TabIndex = 44;
-            this.btnOnOff.UncheckedState.BorderColor = System.Drawing.Color.Black;
-            this.btnOnOff.UncheckedState.BorderRadius = 0;
-            this.btnOnOff.UncheckedState.BorderThickness = 0;
-            this.btnOnOff.UncheckedState.FillColor = System.Drawing.Color.White;
-            this.btnOnOff.CheckedChanged += new System.EventHandler(this.btnOnOff_CheckedChanged_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(244, 273);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 24);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Videoke Price";
             // 
             // label3
             // 
@@ -196,25 +161,6 @@
             this.label2.Size = new System.Drawing.Size(139, 24);
             this.label2.TabIndex = 39;
             this.label2.Text = "Current Price ";
-            // 
-            // txtVideokePrice
-            // 
-            this.txtVideokePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtVideokePrice.DefaultText = "";
-            this.txtVideokePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtVideokePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtVideokePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVideokePrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVideokePrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVideokePrice.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtVideokePrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtVideokePrice.Location = new System.Drawing.Point(254, 300);
-            this.txtVideokePrice.Name = "txtVideokePrice";
-            this.txtVideokePrice.PasswordChar = '\0';
-            this.txtVideokePrice.PlaceholderText = "";
-            this.txtVideokePrice.SelectedText = "";
-            this.txtVideokePrice.Size = new System.Drawing.Size(120, 36);
-            this.txtVideokePrice.TabIndex = 41;
             // 
             // txtCurrPrice
             // 
@@ -241,7 +187,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(632, 416);
+            this.ClientSize = new System.Drawing.Size(632, 348);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChangePricing";
@@ -268,8 +214,5 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCurrPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox txtVideokePrice;
-        private Guna.UI2.WinForms.Guna2CheckBox btnOnOff;
     }
 }

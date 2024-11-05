@@ -53,73 +53,29 @@ namespace AnchorTry
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if (btnOnOff.Checked)
+
+            try
             {
-                try
+                using (var con = new SqlConnection(conString))
                 {
-                    using (var con = new SqlConnection(conString))
+                    con.Open();
+
+                    string qry = "UPDATE tbl_PriceList Set Price = @price where ItemName = @itemName";
+
+                    using (SqlCommand cmd = new SqlCommand(qry, con))
                     {
-                        con.Open();
-
-                        string qry = "UPDATE tbl_PriceList Set Price = @price where ItemName = @itemName";
-
-                        using (SqlCommand cmd = new SqlCommand(qry, con))
-                        {
-                            cmd.Parameters.AddWithValue("@itemName", itemName);
-                            cmd.Parameters.AddWithValue("@price", txtPrice.Text);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Updated Successfully!");
-                        }
+                        cmd.Parameters.AddWithValue("@itemName", itemName);
+                        cmd.Parameters.AddWithValue("@price", txtPrice.Text);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Updated Successfully!");
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
             }
-            else
+            catch (Exception ex)
             {
-                try
-                {
-                    using (var con = new SqlConnection(conString))
-                    {
-                        con.Open();
-
-                        string qry = "UPDATE tbl_PriceList Set Price = @price where ItemName = @itemName";
-
-                        using (SqlCommand cmd = new SqlCommand(qry, con))
-                        {
-                            cmd.Parameters.AddWithValue("@itemName", itemName);
-                            cmd.Parameters.AddWithValue("@price", txtPrice.Text);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Updated Successfully!");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
+                MessageBox.Show(ex.ToString());
             }
-        }
-        private void btnOnOff_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (btnOnOff.Checked == true)
-            {
-                txtVideokePrice.Enabled = true;
 
-                cbPaper.Enabled = false;
-                txtCurrPrice.Enabled = false;
-                txtPrice.Enabled = false;
-            }
-            else if(btnOnOff.Checked == false)
-            {
-                txtVideokePrice.Enabled = false;
-
-                cbPaper.Enabled = true;
-                txtCurrPrice.Enabled = true;
-                txtPrice.Enabled = true;
-            }
         }
     }
 }

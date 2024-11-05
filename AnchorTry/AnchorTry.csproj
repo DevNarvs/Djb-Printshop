@@ -104,6 +104,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbset1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dbSet101.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSet101.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dbSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +265,17 @@
     </None>
     <None Include="dbset1.xss">
       <DependentUpon>dbset1.xsd</DependentUpon>
+    </None>
+    <None Include="dbSet101.xsc">
+      <DependentUpon>dbSet101.xsd</DependentUpon>
+    </None>
+    <None Include="dbSet101.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbSet101.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbSet101.xss">
+      <DependentUpon>dbSet101.xsd</DependentUpon>
     </None>
     <None Include="dbSet2.xsc">
       <DependentUpon>dbSet2.xsd</DependentUpon>
