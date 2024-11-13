@@ -419,7 +419,7 @@ namespace AnchorTry
             using (SqlConnection con = new SqlConnection(conString))
             {
                 con.Open();
-                string qryDisplay = "Select * from tbl_Reservation";
+                string qryDisplay = "Select * from tbl_Reservation ORDER BY Id Desc";
                 SqlCommand cmdView = new SqlCommand(qryDisplay, con);
                 cmdView.CommandText = qryDisplay;
 
