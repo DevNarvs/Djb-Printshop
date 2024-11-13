@@ -80,6 +80,8 @@
             this.txtUpdatedPayment = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdatePayment = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.btnChecker = new Guna.UI2.WinForms.Guna2Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -183,7 +185,7 @@
             this.datePicker.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.datePicker.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datePicker.Location = new System.Drawing.Point(24, 267);
+            this.datePicker.Location = new System.Drawing.Point(26, 259);
             this.datePicker.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.datePicker.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.datePicker.Name = "datePicker";
@@ -202,7 +204,7 @@
             this.btnReserve.FillColor = System.Drawing.Color.Transparent;
             this.btnReserve.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnReserve.ForeColor = System.Drawing.Color.White;
-            this.btnReserve.Location = new System.Drawing.Point(24, 324);
+            this.btnReserve.Location = new System.Drawing.Point(26, 316);
             this.btnReserve.Name = "btnReserve";
             this.btnReserve.Size = new System.Drawing.Size(230, 36);
             this.btnReserve.TabIndex = 8;
@@ -243,7 +245,7 @@
             // 
             this.lbldateTime.AutoSize = true;
             this.lbldateTime.ForeColor = System.Drawing.Color.White;
-            this.lbldateTime.Location = new System.Drawing.Point(21, 251);
+            this.lbldateTime.Location = new System.Drawing.Point(23, 243);
             this.lbldateTime.Name = "lbldateTime";
             this.lbldateTime.Size = new System.Drawing.Size(36, 13);
             this.lbldateTime.TabIndex = 12;
@@ -272,7 +274,7 @@
             "10",
             "11",
             "12"});
-            this.txtHr.Location = new System.Drawing.Point(287, 267);
+            this.txtHr.Location = new System.Drawing.Point(289, 259);
             this.txtHr.Name = "txtHr";
             this.txtHr.Size = new System.Drawing.Size(68, 36);
             this.txtHr.TabIndex = 13;
@@ -290,7 +292,7 @@
             this.txtMins.Items.AddRange(new object[] {
             "00 ",
             "30"});
-            this.txtMins.Location = new System.Drawing.Point(362, 267);
+            this.txtMins.Location = new System.Drawing.Point(364, 259);
             this.txtMins.Name = "txtMins";
             this.txtMins.Size = new System.Drawing.Size(75, 36);
             this.txtMins.TabIndex = 14;
@@ -308,7 +310,7 @@
             this.txtTT.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.txtTT.Location = new System.Drawing.Point(443, 267);
+            this.txtTT.Location = new System.Drawing.Point(445, 259);
             this.txtTT.Name = "txtTT";
             this.txtTT.Size = new System.Drawing.Size(74, 36);
             this.txtTT.TabIndex = 15;
@@ -359,7 +361,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(560, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(560, 115);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 350);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -489,7 +491,7 @@
             // 
             this.lblText.AutoSize = true;
             this.lblText.ForeColor = System.Drawing.Color.White;
-            this.lblText.Location = new System.Drawing.Point(751, 267);
+            this.lblText.Location = new System.Drawing.Point(659, 259);
             this.lblText.Name = "lblText";
             this.lblText.Size = new System.Drawing.Size(109, 13);
             this.lblText.TabIndex = 38;
@@ -579,7 +581,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(286, 251);
+            this.label3.Location = new System.Drawing.Point(288, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 43;
@@ -601,7 +603,7 @@
             this.txtID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtID.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtID.Location = new System.Drawing.Point(977, 322);
+            this.txtID.Location = new System.Drawing.Point(885, 376);
             this.txtID.Name = "txtID";
             this.txtID.PasswordChar = '\0';
             this.txtID.PlaceholderText = "Enter Transaction ID";
@@ -621,7 +623,7 @@
             this.txtUpdatedPayment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUpdatedPayment.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtUpdatedPayment.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtUpdatedPayment.Location = new System.Drawing.Point(977, 371);
+            this.txtUpdatedPayment.Location = new System.Drawing.Point(885, 418);
             this.txtUpdatedPayment.Name = "txtUpdatedPayment";
             this.txtUpdatedPayment.PasswordChar = '\0';
             this.txtUpdatedPayment.PlaceholderText = "Enter Total Amount";
@@ -641,9 +643,9 @@
             this.btnUpdate.FillColor = System.Drawing.Color.Transparent;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(977, 418);
+            this.btnUpdate.Location = new System.Drawing.Point(1043, 376);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(153, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(76, 78);
             this.btnUpdate.TabIndex = 47;
             this.btnUpdate.Text = "Update Payment";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -657,7 +659,7 @@
             this.btnUpdatePayment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdatePayment.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnUpdatePayment.ForeColor = System.Drawing.Color.White;
-            this.btnUpdatePayment.Location = new System.Drawing.Point(998, 286);
+            this.btnUpdatePayment.Location = new System.Drawing.Point(968, 353);
             this.btnUpdatePayment.Name = "btnUpdatePayment";
             this.btnUpdatePayment.Size = new System.Drawing.Size(105, 17);
             this.btnUpdatePayment.TabIndex = 48;
@@ -667,6 +669,30 @@
             this.btnUpdatePayment.UncheckedState.BorderThickness = 0;
             this.btnUpdatePayment.UncheckedState.FillColor = System.Drawing.Color.White;
             this.btnUpdatePayment.CheckedChanged += new System.EventHandler(this.btnUpdatePayment_CheckedChanged);
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(903, 106);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 49;
+            // 
+            // btnChecker
+            // 
+            this.btnChecker.BorderColor = System.Drawing.Color.White;
+            this.btnChecker.BorderThickness = 2;
+            this.btnChecker.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChecker.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChecker.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChecker.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChecker.FillColor = System.Drawing.Color.Transparent;
+            this.btnChecker.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChecker.ForeColor = System.Drawing.Color.White;
+            this.btnChecker.Location = new System.Drawing.Point(903, 280);
+            this.btnChecker.Name = "btnChecker";
+            this.btnChecker.Size = new System.Drawing.Size(227, 36);
+            this.btnChecker.TabIndex = 50;
+            this.btnChecker.Text = "Check Availability";
+            this.btnChecker.Click += new System.EventHandler(this.btnChecker_Click);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -682,7 +708,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 120;
+            this.nameDataGridViewTextBoxColumn.Width = 180;
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -690,7 +716,7 @@
             this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 150;
+            this.addressDataGridViewTextBoxColumn.Width = 180;
             // 
             // contactDataGridViewTextBoxColumn
             // 
@@ -705,7 +731,7 @@
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Width = 150;
+            this.dateDataGridViewTextBoxColumn.Width = 200;
             // 
             // deliveryTimeDataGridViewTextBoxColumn
             // 
@@ -748,6 +774,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
+            this.Controls.Add(this.btnChecker);
+            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.btnUpdatePayment);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.txtUpdatedPayment);
@@ -851,6 +879,8 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUpdatedPayment;
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2CheckBox btnUpdatePayment;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private Guna.UI2.WinForms.Guna2Button btnChecker;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;

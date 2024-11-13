@@ -20,7 +20,7 @@ namespace AnchorTry
     public partial class ucVideoke : UserControl
     {
         string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Narvs\source\repos\AnchorTry\AnchorTry\Database.mdf;Integrated Security=True";
-
+        private List<DateTime> unavailableDates = new List<DateTime>();
 
         private List<int> imageIds; // List to hold image IDs from the database
         private int currentImageIndex = 0; // Track the current image index
@@ -28,7 +28,6 @@ namespace AnchorTry
         DateTime fullSelectedDateTime = DateTime.Now;
         DateTime selectedDate = DateTime.Now.Date;
         int getVideokeID = 0;
-
 
         public ucVideoke()
         {
@@ -38,7 +37,21 @@ namespace AnchorTry
             TimeOut(fullSelectedDateTime, selectedDate);
 
         }
+        void refreshCalendarDate()
+        {
+            LoadUnavailableDates();
 
+
+            monthCalendar1.RemoveAllBoldedDates();
+            monthCalendar1.UpdateBoldedDates();
+
+
+            foreach (DateTime date in unavailableDates)
+            {
+                monthCalendar1.AddBoldedDate(date);
+            }
+            monthCalendar1.UpdateBoldedDates();
+        }
         private void LoadImageIds()
         {
             imageIds = new List<int>();
@@ -241,6 +254,7 @@ namespace AnchorTry
                         int rowsAffected = command.ExecuteNonQuery();
                         MessageBox.Show("Videoke reserved successfully.");
 
+                        refreshCalendarDate();
                         try
                         {
                             using (SqlConnection con = new SqlConnection(conString))
@@ -394,7 +408,7 @@ namespace AnchorTry
             currentImageIndex = (currentImageIndex + 1) % imageIds.Count;
             DisplayImage(); // Display the next image
         }
-       
+
         private void ucVideoke_Load(object sender, EventArgs e)
         {
             datePicker.Format = DateTimePickerFormat.Short;
@@ -409,10 +423,43 @@ namespace AnchorTry
             {
                 pictureBox1.Visible = true;
             }
+        }
 
+        private void LoadUnavailableDates()
+        {
+            unavailableDates.Clear();
 
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                con.Open();
+                string checkQuery = "SELECT Date FROM tbl_Reservation WHERE Videoke_ID = @videokeID AND End_Reservation > @selectedDate";
 
+                using (SqlCommand checkCommand = new SqlCommand(checkQuery, con))
+                {
+                    DateTime currDate = DateTime.Now;
+                    string curr = currDate.ToString("g");
 
+                    lblAvailable.Text = lblFileName.Text;
+
+                    checkCommand.Parameters.AddWithValue("@videokeID", imageIds[currentImageIndex]);
+                    checkCommand.Parameters.AddWithValue("@selectedDate", curr);
+                    SqlDataReader reader = checkCommand.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string reservationDate = reader.GetString(0);
+                        try
+                        {
+                            DateTime date = DateTime.Parse(reservationDate);
+                            unavailableDates.Add(date);
+                        }
+                        catch (FormatException)
+                        {
+                            Console.WriteLine("Invalid date format.");
+                        }
+                    }
+                }
+            }
         }
         private void refreshGridView()
         {
@@ -454,7 +501,7 @@ namespace AnchorTry
                 con.Open();
 
                 string qry = "UPDATE tbl_Reservation SET Payment = @payment where Id = @id";
-                using (SqlCommand cmd = new SqlCommand (qry, con))
+                using (SqlCommand cmd = new SqlCommand(qry, con))
                 {
                     cmd.Parameters.AddWithValue("@payment", txtUpdatedPayment.Text);
                     cmd.Parameters.AddWithValue("@id", txtID.Text);
@@ -468,5 +515,11 @@ namespace AnchorTry
                 }
             }
         }
+
+        private void btnChecker_Click(object sender, EventArgs e)
+        {
+            refreshCalendarDate();
+        }
+
     }
 }

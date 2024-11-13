@@ -16,10 +16,10 @@ namespace AnchorTry
     public partial class UC_Dashboard : UserControl
     {
         string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Narvs\source\repos\AnchorTry\AnchorTry\Database.mdf;Integrated Security=True";
-
         public UC_Dashboard()
         {
             InitializeComponent();
+            progressBar.Value = 0;
         }
 
         private void UC_Dashboard_Load(object sender, EventArgs e)

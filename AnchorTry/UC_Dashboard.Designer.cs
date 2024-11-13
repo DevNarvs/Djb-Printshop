@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlTotalEarnings = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.progressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.lblProgressBar = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlTotalEarnings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -399,6 +401,10 @@
             this.label19.TabIndex = 2;
             this.label19.Text = "Rented in this month";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // UC_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,10 +465,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label16;
-        private Guna.UI2.WinForms.Guna2CircleProgressBar progressBar;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label lblProgressBar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer1;
+        public Guna.UI2.WinForms.Guna2CircleProgressBar progressBar;
+        public System.Windows.Forms.Label lblProgressBar;
     }
 }
