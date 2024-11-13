@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddVideoke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVideoke.Designer.cs">
+      <DependentUpon>AddVideoke.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangePricing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>videokeFinaldbSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddVideoke.resx">
+      <DependentUpon>AddVideoke.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePricing.resx">
       <DependentUpon>ChangePricing.cs</DependentUpon>
     </EmbeddedResource>

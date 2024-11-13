@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Data.SqlClient;
 
 namespace AnchorTry
 {
@@ -85,6 +87,8 @@ namespace AnchorTry
         {
             UC_Dashboard uc = new UC_Dashboard();
             addUserControl(uc);
+
+            
         }
         private void btnPrintshop_Click(object sender, EventArgs e)
         {

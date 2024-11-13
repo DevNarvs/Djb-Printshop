@@ -23,5 +23,17 @@ namespace AnchorTry
             this.Hide();
             cp.Show();
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnVideoke_Click(object sender, EventArgs e)
+        {
+            AddVideoke addVideoke = new AddVideoke();
+            addVideoke.Show();
+            this.Hide();
+        }
     }
 }

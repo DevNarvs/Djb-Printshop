@@ -394,69 +394,7 @@ namespace AnchorTry
             currentImageIndex = (currentImageIndex + 1) % imageIds.Count;
             DisplayImage(); // Display the next image
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            // Open a file dialog to select an image
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Display the image in the PictureBox
-                pictureBox2.Image = new Bitmap(openFileDialog.FileName);
-
-                // Get the image name and path
-                string imageName = Path.GetFileName(openFileDialog.FileName);
-                string imagePath = openFileDialog.FileName;
-
-                // Optional: Assign image name from a text box
-                if (!string.IsNullOrEmpty(txtFileName.Text))
-                {
-                    imageName = txtFileName.Text;
-                }
-
-                // Convert the image to a byte array
-                byte[] imageData = File.ReadAllBytes(imagePath);
-
-                // Insert the image into the database
-                InsertImageIntoDatabase(imageName, imageData);
-            }
-        }
-        private void InsertImageIntoDatabase(string imageName, byte[] imageData)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(conString))
-                {
-                    connection.Open();
-
-                    // SQL query to insert the image data
-                    string query = "INSERT INTO tbl_Videoke (Name, Image, Status) VALUES (@name, @image, @status)";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Add parameters to the SQL query
-                        command.Parameters.AddWithValue("@name", imageName);
-                        command.Parameters.AddWithValue("@image", imageData);
-                        command.Parameters.AddWithValue("@status", "Available");
-
-
-                        // Execute the query
-                        int rowsAffected = command.ExecuteNonQuery();
-                        MessageBox.Show($"{rowsAffected} row(s) inserted successfully.");
-
-                        connection.Close();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-        }
+       
         private void ucVideoke_Load(object sender, EventArgs e)
         {
             datePicker.Format = DateTimePickerFormat.Short;
@@ -490,6 +428,44 @@ namespace AnchorTry
                 daView.Fill(dtView);
                 dgvTransactions.DataSource = dtView;
                 con.Close();
+            }
+        }
+
+        private void btnUpdatePayment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (btnUpdatePayment.Checked == true)
+            {
+                txtID.Enabled = true;
+                txtUpdatedPayment.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+            else if (btnUpdatePayment.Checked == false)
+            {
+                txtID.Enabled = false;
+                txtUpdatedPayment.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            using (var con = new SqlConnection(conString))
+            {
+                con.Open();
+
+                string qry = "UPDATE tbl_Reservation SET Payment = @payment where Id = @id";
+                using (SqlCommand cmd = new SqlCommand (qry, con))
+                {
+                    cmd.Parameters.AddWithValue("@payment", txtUpdatedPayment.Text);
+                    cmd.Parameters.AddWithValue("@id", txtID.Text);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Paid Successfully");
+
+                    refreshGridView();
+                    txtID.Text = "";
+                    txtUpdatedPayment.Text = "";
+                }
             }
         }
     }
